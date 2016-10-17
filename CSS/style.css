@@ -1,0 +1,704 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, 
+caption, tbody, tfoot, thead, tr, th, td 
+                  {margin: 0;padding: 0;border: 0;outline: 0;
+                  font-size: 100%;vertical-align: baseline;
+                  background: transparent;}
+body              {line-height: 1;}
+ol, ul            {list-style: none;}
+blockquote, q     {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';	content: none;}
+:focus            {outline: 0;}
+ins               {text-decoration: none;}
+del               {text-decoration: line-through;}
+table             {border-collapse: collapse;border-spacing: 0;}
+
+
+
+
+@font-face {
+    font-family:Swis721ExBTRoman;
+    src: url('../fonts/Swis721_Ex_BT/font_-_truetype_-_swiss_721_extended_bt-webfont.eot');
+    src: url('../fonts/Swis721_Ex_BT/ont_-_truetype_-_swiss_721_extended_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Swis721_Ex_BT/font_-_truetype_-_swiss_721_extended_bt-webfont.woff') format('woff'),
+         url('../fonts/Swis721_Ex_BT/font_-_truetype_-_swiss_721_extended_bt-webfont.ttf') format('truetype'),
+         url('../fonts/Swis721_Ex_BT/font_-_truetype_-_swiss_721_extended_bt-webfont.svg#Swis721ExBTRoman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{ border:none;  font-family:Swis721ExBTRoman, Arial; background-image:url('../imagenesPrueba/fondo-domingo.jpg'); background-repeat:no-repeat; background-attachment:fixed; }
+ul, li {margin:0; padding:0; list-style:none;}
+.clear{ clear:both; }
+.empty{ height:400px;}
+.euro{ font-family:Arial;}
+#content{margin:15px 0 0 0; width: 1024px; background-color: #FFF; padding: 25px 0 50px 0;}
+#contenido{margin:0px; width: 1024px; background-color: #FFF; padding:0px; overflow: hidden}
+
+/***********************************************************************************************************************  HEADER ************************************************************************************************/
+#carrito{background-color: #000; color:#FFF; width:100%;}
+#carrito ul{margin: 0 auto; width: 1024px;}
+/*#carrito ul li{padding:5px 0;}*/
+#carrito ul li a{text-decoration:none; color:#FFF; float:right; padding:5px 0;}
+#carrito ul li a:visited{text-decoration:none; color:#FFF;}
+#carrito ul li a img{ float: right;}
+#carrito ul li a span{ float: left; font-size: 0.6em; margin:5px 5px 0 0;}
+
+#header_nav_container{clear:both; padding:0px 0 10px 0; background: #FFF} 
+#header_nav_container #header_nav{ width:1024px; margin:0 auto}
+#header_nav_container #header_nav a img{margin-top:10px;}
+#header_nav_container #header_nav ul{float:right; font-size: 9px; font-weight:bold; margin:10px 10px 0 0 ;}
+#header_nav_container #header_nav ul li{display:inline; margin:0 0 0 10px;}
+#header_nav_container #header_nav ul li a{color:#000; text-decoration:none; vertical-align:middle;}
+#header_nav_container #header_nav ul li a:visited{color:#000; text-decoration:none; vertical-align:middle;}
+#header_nav_container #header_nav ul li a.active{color:#acc131;}
+#header_nav_container #header_nav ul li a img{vertical-align:middle; margin:5px 0;}
+
+#container {position:relative; margin:auto; width:1024px; min-width:1024px; margin-top:5px; margin-bottom:50px; z-index:2;}
+
+#menu{ font-family:Swis721ExBTRoman; padding-top:10px; font-size:16px; margin-left:15px; }
+#menu li{  float:left; margin:10px 0 10px 25px; }
+#menu li.boton_outlet{ margin-top: 5px;/* display: none*/}
+#menu li a{ text-decoration:none; color:#000000; }
+#menu li a.active{ font-weight:bold; }
+#menu li a:hover{font-weight:bold; color:#000;}
+#menu #menuBici{ padding:15px 0;}
+#menu .triangulo-submenu{ /*background: url('../imagenesPrueba/triangulo-submenu-domingo.gif') no-repeat scroll left top transparent*/background-color: transparent; height: 14px; position: absolute; width: 14px; margin:0 0 0 45px;}
+#menu li.buscar{border:1px solid #000;padding:3px 5px 3px 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; float:right;}
+#menu li.buscar span{vertical-align:middle; font-size: 11px;}
+#menu li.buscar img{display:inline; vertical-align:middle;}
+#menu li.buscar form{display:inline;}
+#menu li.buscar form input[type=text]{display:inline; width:80px; height:10px;vertical-align:middle;}
+#menu li.buscar form input[type=submit]{background: url("../images/lupa.jpg") no-repeat scroll 0 0 transparent; display:inline; width:15px; height:15px; vertical-align:middle; border:0px; cursor:pointer;}
+
+/*.triangulo-submenu{ background: url('imagenesPrueba/triangulo-submenu-domingo.gif') no-repeat scroll left top transparent; height: 14px; position: absolute; width: 14px; margin:0 0 0 45px;}*/
+.submenu{position:absolute; z-index:2000; background-color: #FFF;width:1024px;display: none; top:60px}
+.submenu ul{font-size:12px; border-right: 2px solid #000; width:200px; height: 100%; float:left;}
+
+.submenu ul:last-of-type{border-right: 2px solid #FFF;}
+
+.submenu ul.marcas{width:140px;}
+/*.submenu ul.ultim{margin:0 0 0 15px;}*/
+.submenu ul li{margin:15px 0 0 0; padding:0 10px 0 20px;}
+.submenu ul li a{color:#000; text-decoration:none;}
+.submenu ul li a.sub1{color:#000; text-decoration:none; margin-left:5px;}
+.submenu ul li a.destacat{background-color: #acc314; color:#000; text-decoration:none; padding:2px 5px;}
+
+#submenu_descr{width:675px; float:left; margin:0;}
+#submenu_descr .submenu_img{ width:680px; height:486px; overflow:hidden; text-align:center;}
+#submenu_descr .submenu_text{ height:90px;}
+#submenu_descr img{/*max-height:450px;*/ max-width:680px;}
+#submenu_descr p.peu_gran{font-weight: bold; padding:10px 0 5px 10px;}
+#submenu_descr p.peu_petit{font-size:11px; padding:0 0 15px 10px;}	
+
+
+
+#carrito_container{ position:absolute; width:100%; z-index:5;}	
+#carrito_container #finestra_carrito{ background-color:#000; float:right; color:#FFF; width:540px; margin-right:450px;}
+#carrito_container #finestra_carrito #requadre{ padding:10px 0;}
+#carrito_container #finestra_carrito #requadre .item{ margin-top:10px; border-top: 1px solid #FFF; border-bottom: 1px solid #FFF;}
+#carrito_container #finestra_carrito #requadre .item .item_content{ float:left; padding:10px; width:250px;}
+#carrito_container #finestra_carrito #requadre .item .item_content .info{ line-height:16px; font-size:12px; height:80px; padding:15px 0;}
+#carrito_container #finestra_carrito #requadre .item .item_content li.producte_img img{ width:250px;}
+#carrito_container #finestra_carrito li.titol{ text-align:center; font-size:16px;}
+#carrito_container #finestra_carrito li.text1{ float:left;}
+#carrito_container #finestra_carrito li.text2{ float:right; padding-right:30px;}
+#carrito_container #finestra_carrito li.text3{ float:right; font-size:16px;}
+#carrito_container #finestra_carrito li.text4{ float:right; color:#acc314; font-size:16px; cursor:pointer;}
+/*
+#container #menu{margin:0; vertical-align:middle; margin:0 0 13px 0;}
+#container #menu{margin:0; vertical-align:middle; margin:0 0 13px 0;}
+#container #menu{margin:0; vertical-align:middle; margin:0 0 13px 0;}
+#container #menu{margin:0; vertical-align:middle; margin:0 0 13px 0;}
+*/
+
+/***********************************************************************************************************************  FOOTER ************************************************************************************************/
+#footer{ width: 100%; background-color: #000; padding-bottom:50px;}
+#footer #logo{ margin:auto; height:150px; width:1024px; min-width:1024px; color:#FFF; border-bottom:1px solid #8BB816;}
+#footer #logo img{ float:left;  margin:30px 0;}
+#footer #logo p{ float:right; font-size:10px; padding: 30px 0px; text-align:justify; line-height:12px; width: 885px;}
+#footer_nav{ margin:auto; width:1024px; min-width:1024px; color:#FFF;padding:10px 0 0 0 ; font-size:12px;}
+#footer_nav ul{float:left; margin:0 0 0 45px;}
+#footer_nav ul li{margin:10px 0 0 0;}
+#footer_nav ul.first{float:left; margin:0;}
+#footer_nav ul.last{padding-right:70px; border-right:1px solid #FFF;}
+#footer_nav ul li.first{margin:10px 0 10px 0; font-weight: bold; font-size:16px;}
+#footer_nav ul li a{color:#FFF; text-decoration:none;}
+#footer_nav ul li a:visited{color:#FFF; text-decoration:none;}
+
+#footer_nav ul#referencies{float:left; margin-top:-5px; padding-left:10px; border-left: 1px solid #FFFFFF;}
+#footer_nav ul#referencies li{margin:15px 0 0 0;}		
+
+#copyright{ width: 100%; background-color: #000; padding:0 0 10px 0;}
+#copyright hr{ margin:0; color:#FFF;}
+#copyright div{ margin:auto; width:1024px; min-width:1024px; color:#FFF;}
+#copyright div ul{ text-align: left;padding:10px 0 0 0;}
+#copyright div ul li{ display:inline;margin:0 0 0 10px; font-size: 0.6em;}
+#copyright a{ color:#FFF;}
+/********************************************************************************************************************** ESTILOS HOME   ******************************************************************************************/
+/*#menu{ font-family:Swis721ExBTRoman; padding-top:10px; font-size:16px; margin-left:15px; }
+#menu li{  display:inline; margin-left:25px; }
+#menu li a{ text-decoration:none; color:#000000; }
+#menu li a:hover{font-weight:bold; color:#000;}*/
+
+/****  BLOKES SUPERIOR  ***/
+#bloque-sup-izk{ clear:both; width:555px; float:left; margin-top:30px;}
+#bloque-sup-izk h2{ background:#000; color:#848484; font-size:25px; padding:5px 10px; border-bottom:2px solid #FFFFFF;}
+#bloque-sup-izk #bloque{ background-color:#FFF; width:555px; height:425px; background-color:#000000;}
+#bloque-sup-izk #bloque #fons_banner{ position:absolute; margin:5px; height:415px;}
+#bloque-sup-izk #bloque #fons_banner img{ width:340px; position:absolute; bottom:0px;}
+#bloque-sup-izk #bloque #textos_banner{ position:absolute; margin:20px 0 0 15px; width:340px; font-weight: bold;}
+#bloque-sup-izk #bloque #textos_banner a.verTodas{ color:#acc314; text-decoration:none;font-size:12px; letter-spacing: 1px}
+#bloque-sup-izk #bloque #textos_banner a.verTodas span{ color:#000; font-weight: bold; background: url('../images/etiqueta_ofertas_sin.png') no-repeat right top; padding: 0 8px}
+#bloque-sup-izk #bloque #textos_banner p.verd{ color:#acc314; font-size:20px; margin-top: 10px;}
+#bloque-sup-izk #bloque #textos_banner p.blanc{ color:#FFF; font-size:11px; padding:10px 15px 0 0; line-height:15px; text-align:justify;}
+#bloque-sup-izk #bloque #textos_banner p.vermell{ color:#D10013; font-size:25px; height:30px; padding-top:15px; font-weight: bold}
+#bloque-sup-izk #bloque #textos_banner p.vermell span{ background-image:url('../images/flecha_dto.png'); background-repeat:no-repeat; color:#000; font-size:20px; height:30px; float:right; margin-top:-3px; margin-right:10px; padding:5px 20px 5px 30px;/*padding:5px 35px 5px 45px;*/}
+#bloque-sup-izk #bloque #textos_banner p.vermell span.ofehome{font-size:12px; line-height:22px;padding: 5px 10px 5px 20px;}
+#bloque-sup-izk #bloque #promos{ width:197px; height:415px; float:right; margin-right:5px;}
+#bloque-sup-izk #bloque #promos img{ margin-top:5px;}
+
+#bloque-sup-der{ width:455px; float:right; margin-top:30px;}
+#bloque-sup-der #bloque-der{ width:223px; height:300px; float:left; background-color:#FFF;}
+#bloque-sup-der #bloque-der h2{ background:#000; color:#848484; font-size:25px; padding:5px 10px;}
+	#bloque-sup-der #bloque-der h2 a {color:#848484; text-decoration:none;}
+#bloque-sup-der #bloque-der #noticias{ position:absolute; margin:5px; width:223px;}
+#bloque-sup-der #bloque-der #noticias #textos_noticias{ background-color:#000; width:213px; height:135px; margin:0px;}
+/*#bloque-sup-der #bloque-der #noticias #textos_noticias p.verd{ color:#acc314; font-size:12px; padding:10px 0 0 10px;}		
+#bloque-sup-der #bloque-der #noticias #textos_noticias p.blanc{ color:#FFF; height:80px; font-size:8px; padding:10px 5px 0 10px; line-height:10px; text-align:justify;}
+#bloque-sup-der #bloque-der #noticias #textos_noticias p.news{ color:#FFF; font-size:8px; float:right; padding:10px 5px 0 5px;}
+#bloque-sup-der #bloque-der #noticias #textos_noticias p.news a{ color:#FFF; text-decoration:none;}
+#bloque-sup-der #bloque-der #noticias #textos_noticias p.news a:visited{ color:#FFF; text-decoration:none;}*/
+
+#bloque-sup-der #video{ position:absolute; width:223px; margin-top:310px; float:left;}
+#bloque-sup-der #video h2{ background:#000; color:#FFF; font-size:12px; padding:2px 10px;}
+#bloque-sup-der #act_container{ width:223px; float:right;}
+#bloque-sup-der #act_container #act_fons{ background-image:url('../images/actividades.jpg'); background-repeat:no-repeat; width:223px; height:240px;}
+#bloque-sup-der #act_container #act_fons #act_text{ position:absolute; margin:45px 5px 0 5px;}
+#bloque-sup-der #act_container #act_fons #act_text a{ text-decoration:none; color:#000;}
+#bloque-sup-der #act_container #act_fons #act_text div{ width:208px; height:33px; background:url('../images/cuadrat_actividades.png'); font-size:12px; background-repeat:no-repeat; margin-top:5px;}
+/*#bloque-sup-der #act_container #act_fons #act_text div span.dia1{ position:absolute; top:0px; left:0px; width:40px; margin:10px 5px;}
+#bloque-sup-der #act_container #act_fons #act_text div span.dia2{ position:absolute; top:0px; left:0px; width:40px; margin:48px 5px 5px 5px;}
+#bloque-sup-der #act_container #act_fons #act_text div span.dia3{ position:absolute; top:0px; left:0px; width:40px; margin:85px 5px 5px 5px;}
+#bloque-sup-der #act_container #act_fons #act_text div span.descr1{ position:absolute; top:0px; left:0px; width:138px; margin:10px 5px 5px 65px;}
+#bloque-sup-der #act_container #act_fons #act_text div span.descr2{ position:absolute; top:0px; left:0px; width:138px; margin:48px 5px 5px 65px;}
+#bloque-sup-der #act_container #act_fons #act_text div span.descr3{ position:absolute; top:0px; left:0px; width:138px; margin:85px 5px 5px 65px;}*/
+
+#bloque-sup-der #act_container #act_fons #act_text div span.dia{  float:left; margin:5px 0 0 5px; width:65px; font-size:9px; font-weight:bold; padding-top:3px;}
+#bloque-sup-der #act_container #act_fons #act_text div span.descr{  float: right; width: 125px; height:23px; font-size:9px; font-weight:bold; margin:5px 0; padding:3px 0 0 5px; border-left:2px solid black;}
+
+#bloque-sup-der #ban_financiacion{ width:223px; height:133px; margin-top:15px;}
+#bloque-sup-der #ban_newsletter{ width:223px; height:59px; margin-top:15px;}
+
+/****  FIN BLOKES SUPERIOR  ***/
+#marcas{ width: 100%; margin-top:30px;}
+#marcas ul{ margin-bottom:20px;}
+#marcas li{ display: inline-block; margin: 0 25px 30px;}
+#marcas li:first-child{ margin:0 25px 30px 0;}
+#marcas li img {vertical-align:middle;}
+#marcas div{ margin:10px 0 0 0;}
+
+#tiendas{ margin-top:25px;}
+#tiendas .tienda{ float:left; width:325px; line-height:18px;}
+#tiendas  p.titularTiendas{ font-size:14px; font-weight:bold; margin-top:10px; background-color:#000; color:#FFF; padding-left:13px; height:17px; padding-top:5px; }
+#tiendas  p.direc{ margin-top:10px;}
+#tiendas  p{ font-size:14px; }
+#tiendas  p span{ font-weight: bold;}
+
+/***********************************************************************************************************************  NAV ***************************************************************************************************/
+#nav_content ul li a{color:#000; font-size:14px;}
+#nav_content ul li a:visited{color:#666; font-size:14px;}
+#nav {margin-top:10px; width:100%;}
+#nav #nav_content {float:right;}
+#nav #nav_content ul{padding: 10px 0;}
+#nav #nav_content ul li{display:inline; margin-right:5px;}
+#nav #nav_content ul li#actual a{ font-size: 14px; font-weight:bold; background-color: #000; color:#FFF; padding: 3px 5px}
+
+#tornar{ font-family:Swis721ExBTRoman; padding-top:10px; font-size:10px; margin:0 0 13px 15px;} 
+#tornar li{  display:inline; margin-left:25px; }
+#tornar a{ text-decoration:none; color:#000000; }
+#tornar span{position: absolute; margin:5px;}
+#tornar a:hover{ color:#000;}
+
+/***********************************************************************************************************************  SLIDE HOME ********************************************************************************************/
+#sliderHOME{ width:100%; margin:15px 0; height:500px; /*background-color:#F00;*/}
+#slides { z-index:100;}
+
+/*	Slides container	Important:	Set the width of your slides container 	If height not specified height will be set by the slide content	Set to display none, prevents content flash*/
+.slides_container { float:left;	width:100%; height:516px; overflow:hidden; color:#000000;}
+
+/*	Each slide	Important:	Set the width of your slides	Offeset for the 20px of padding	If height not specified height will be set by the slide content	Set to display block*/
+#slides{ /*width:950px;*/ }
+#slides .slide { /*width:900px;*/ height:516px; display:block;}
+.slide img{	}
+.link{	text-align:right;	float:left;	position:relative;	height:500px;	z-index:50;	width:100%;	height:25px;	background-color:#FFFFFF;	margin-top:5px;	font-size:10px;	color:#000000;}
+
+/*	 Pagination   */
+.pagination { float:left; margin-top:-25px; margin-left:410px;  }
+.pagination li {	float:left; 	position:relative;	z-index:10;	margin-top:0px; margin-left:35px;	list-style:none;}
+.pagination li a {	margin-top:5px;	display:block;	width:12px;	height:0;	padding-top:12px;	background-image:url(../images/pagination.png);	background-position:0 0;	float:left;	position:relative;	overflow:hidden;}
+.pagination li.current a {	background-position:0 -12px;}
+
+
+/********************************************************************************************************************** ESTILOS BICIS   *****************************************************************************************/
+#caja-filtro{text-align: center;  margin:0 auto 0 auto; width:96%; }
+.filtre{
+        display: inline-block;
+        margin-left:30px;
+        font-size: 0.8em;
+        border: 1px solid #000;
+        padding: 7px 5px 3px 5px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+}
+.filtre:first-of-type{margin-left: 0 !important}
+.filtre2{display: inline-block;  margin-left:36px; font-size: 0.8em;}
+.filtre p{float:left; padding-top:2px;}
+.filtre p span{background-color: #C1C1C1; padding:0 15px;}
+.filtre form{float:left; margin:-3px 0 0 10px;}
+.filtre form select{ background:#C1C1C1; padding:2px 2px 2px 5px; font-size: 12px; border:1px solid #C1C1C1; height:21px;}
+
+.element_container{margin-top:25px;}
+.element{border:2px solid #000; width:316px; height: 230px; float:left; margin:0 0 30px 15px;}
+.element .img_oferta{float:left; margin-top:-185px;}
+.element .img_bici{float:left; text-align:center; width: 100%;}
+.element img{height:187px; max-width:315px;}
+.element img.icono_oferta{ height:46px; /*width:42px;*/}
+.element p{ float:left; background-color:#000; width:100%; height: 43px; color:#FFF; font-size: 0.7em;line-height: 12px}
+.element p span.titol{float:left; padding: 7px 0 0 5px; width: 215px; height:47px;}
+.element p span.preu{float:right; padding: 8px 5px 0 0; font-size:1.2em; font-family:Arial;}
+
+.element a{text-decoration: none}
+
+.element p.oferta{ float:left; background-color:#AA0015; width:100%;  color:#FFF; font-size: 0.7em;line-height: 12px; clear:right; margin:0;}
+	.element p.oferta span {}
+	.element p.oferta .preu {text-decoration:line-through;font-size:1.2em; margin-bottom:5px; width:75px; text-align:right;}
+	.element p.oferta span.preuo{float:right; padding: 0px 3px 0 0; font-size:1.2em; font-family:Arial;width:75px; text-align:right;}
+	.element p.oferta span.text{float:right; padding: 0px 2px 0 0; font-size:0.9em; font-family:Arial;}
+
+/********************************************************************************************************************** ESTILOS PRODUCTO   *****************************************************************************************/
+#product_container{ margin:15px 0 0 0; width: 1024px; background-color: #FFF; padding: 0 0 50px 0;}	
+/*#product_container a#dialog-link{ position:absolute; top:210px; left:460px;}*/
+#dialog form p{ padding:10px;}
+#dialog form input{ margin-left:10px}
+#dialog form textarea{ margin:10px 0 0 10px; padding:5px;}
+
+#imatge_producte img{ /*margin-left:-110px; float: left; width:630px; *//*height:439px;*/}
+#product_container #info-img{ margin-top: 10px; margin-bottom: 20px; width: 95%; margin-left:15px; color:#000; text-decoration:none; font-size:10px; font-weight: bold}
+#product_container a#fancyBox{ margin-left:15px; color:#000; text-decoration:none; font-size:11px;}
+#product_container a#fancyBox span{ float:left; margin-left:5px; margin-top:3px;}
+#product_container a#fancyBox img{ float:left; margin-left:15px;}
+
+.fitxa{ margin:0 20px 0 15px; float: right; width: 350px;}
+
+.fitxa p.titol{ margin:50px 0 0 0; font-size:1.2em; font-weight: bold;line-height: 18px}
+.fitxa p.preu{ margin:20px 0 0 0; font-size:1em;}
+.fitxa p.preu span{ font-size:1em}
+
+/*.fitxa p.preuOferta1{ margin:20px 0 0 0; font-size:0.9em; width:50%; float:left;}
+.fitxa p.preuOferta2{ float:left;margin:25px 0 0 20px;color:#FFF; background-color: #e20916; padding:5px 15px;font-weight: bold;}*/
+.fitxa p.preuOferta1{ margin:10px 0 .0 0; font-size:1em; float:left;}
+.fitxa p.preuOferta2{ font-size:1em}
+.fitxa p.preuOferta2 span{ float:left;margin:5px 0 0 0;color:#FFF; background-color: #e20916; padding:5px 15px;font-size:1em; font-weight: bold}
+
+.fitxa a{ float:left; margin:20px 0 0 5px; padding:10px 0 0 0;font-size:0.8em; text-decoration:none; color:#000;}
+.fitxa a:visited{ text-decoration:none; color:#000}
+.fitxa p.titol_desc{ font-weight: bold; font-size:13px; width:349px; padding:25px 15px 0 0;}
+.fitxa p.desc{ font-size:12px; width:349px; padding:10px 15px 0 0; line-height:14px;}
+.fitxa img{ float:left; margin-top:20px;}
+
+.fitxa #newH1, .fitxa h1, .fitxa h2, .fitxa h4, .fitxa h4{font-size: 13px; padding: 0 0 5px 0}
+div.block-detail-desktop{font-size: 12px; padding: 10px 15px 0 0; line-height: 14px}
+.fitxa p{font-size: 12px; padding: 5px 15px 0 0;line-height: 14px}
+.fitxa div{font-size: 12px; margin: 5px 0 0 0;line-height: 14px}
+.fitxa span{font-size: 12px; padding: 10px 0 0 0;line-height: 14px}
+.fitxa ul{font-size: 12px; padding: 5px 15px 5px 25px;line-height: 14px}
+.fitxa ul li{list-style: disc; list-style-position: outside}
+.opinion{ margin:0 0 0 15px; float: left;}
+.opinion p.opinio_titol{ margin:50px 0 0 0; color:#ACC314; font-size:1.1em; font-weight: bold;}
+.opinion p.opinio{ font-size:12px; padding:10px 15px 0 0; line-height:14px;}
+
+#bicis_relacionades{ margin-top:25px;}
+#bicis_relacionades p.titol{ padding-top:5px; font-size:16px; color:#525252;margin:0 0 10px 15px; font-weight: bold;}
+#bicis_relacionades div{ border:2px solid #000; width:316px; height: 230px; float:left; margin:0 0 0 15px; text-align:left /*center*/;}
+#bicis_relacionades div img{ height:187px; max-width:315px;}
+#bicis_relacionades div a{ text-decoration: none}
+#bicis_relacionades div a p{ background-color:#000; width:100%; height: 43px; color:#FFF; font-size: 0.7em /*font-size: 0.8em*/;line-height: 12px}
+#bicis_relacionades div a span.tipus{ float:left; padding: 5px 0 0 5px;}
+#bicis_relacionades div a span.nom{ clear: both; float:left; padding: 2px 0 1px 5px;}
+
+/*#bicis_relacionades div a span.tipus{ float:left; padding: 10px 0 0 5px;}
+#bicis_relacionades div a span.nom{ float:right; padding: 10px 5px 0 0;}
+*/
+/********************************************************************************************************************** ESTILOS NOTICIAS   **************************************************************************************/
+/*#galeria1{ margin-top:30px; height:285px;}
+#galeria2{ margin-top:50px; height:335px;}*/
+.galeria_item_noticia{ padding:50px 0 0 0;margin-bottom: 20px; overflow: hidden;}
+#potada_noticia{ float: left; margin-top: -362px;}
+#potada_noticia h3{ padding:20px 0 0 15px; color:#CACACA; opacity:0.79; font-size:50pt; font-weight:bold;}
+.galeria_imatges{ float:left; margin-left:5px; width:310px;}
+.galeria_imatges ul li{ float:left; margin:4px;}
+.text_noticia{ float:left; margin:0px 15px; width:679px;}
+.text_noticia ul li.data span.fecha_noticia{ font-size:0.7em;}
+.text_noticia ul li.data{ float:left; color:#acc314; font-size:1.1em; font-weight:bold; width:205px; text-align:right; padding-top: 9px;}
+.text_noticia ul li.titol{ float:right; background-color:#acc314; color:#FFF; font-size:1.5em; font-weight:bold; width:450px; padding:10px 0 10px 10px;}
+.text_noticia ul li p{ font-size:0.7em; line-height:14px; padding-top:20px; text-align:justify;}
+
+/********************************************************************************************************************** ESTILOS ACTIVIDADES   **************************************************************************************/
+#potada_activitat{ float:left; margin:-362px 0 0 10px;}
+#potada_activitat h3{ padding:20px 0 0 15px; color:#CACACA; opacity:0.79; font-size:50pt; font-weight:bold;}
+.activitat{ padding:30px 0; width:705px;}
+#activitat_last{ padding-bottom:20px;}
+.imatges_lupa{ float:left; width:280px; margin-left:5px;}
+.imatges_lupa ul.peques li{ width:130px; margin-top:10px;}
+.imatges_lupa ul li{ float:left; margin:0 4px;}
+
+
+.text_activitat{ float:left; margin-right:0px; width:420px !important;}
+.text_activitat ul li.verd{ float:left; color:#acc314; font-size:0.8em; font-weight:bold; width:110px;}
+.text_activitat ul li.verd2{ float:left; color:#acc314; font-size:0.8em; font-weight:bold; width:70px;} 
+.text_activitat ul li.subverd{ float:right; color:#acc314; font-size:0.8em; font-weight:bold; margin:10px 0;}
+.text_activitat ul li.titol{ float:left; width:400px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:10px; margin-bottom:10px;}
+.text_activitat ul li.data{ background-color:#acc314; float:left; width:302px; color:#FFF; font-size:0.8em; font-weight:bold; padding:4px; margin: -4px 0 0 0;}
+.text_activitat ul li.preu{ background-color:#acc314; float:left; width:100px; color:#FFF; font-size:0.8em; font-weight:bold; padding:4px; margin: -4px 0 0 0;}
+.text_activitat ul li p{ font-size:0.7em; line-height:14px; padding:10px 0 20px 0; text-align:justify;}
+.text_activitat ul li.descarga{ float:right; font-size:0.8em;}
+.text_activitat ul li.descarga a{ color:#000; text-decoration:none;}
+.text_activitat ul li.descarga a img{ float:left; margin:-6px 5px 0 0;}
+
+#colum_dreta{ float:right; margin:30px 10px 0 0;}
+#colum_dreta div.banner{ margin-top:20px;}
+
+
+.text_activitat input[type=submit]{ float:right; border:0px; background:url("../images/images_actividades/boton_inscripcion.png") no-repeat scroll 0 0 #000000; color:#FFF; text-align: left; width:95px; height:24px; 
+padding:0 0 2px 15px; cursor:pointer;}
+/*.inscribir{ background: url('../images/images_actividades/boton_inscripcion.jpg'); background-repeat:no-repeat; float:right; color:#FFF; width:90px; height:18px; font-size:0.8em; margin-top:15px; padding:6px 5px 0px 25px;
+text-decoration:none;}*/
+
+
+/********************************************************************************************************************** ESTILOS TRABAJA CON NOSOTROS   **************************************************************************************/
+.job_container{ margin-top:40px;}
+.job_container .job_image{ float:left; margin:0 0 40px 10px;}
+.job_container .job{ float:left; margin:0 10px 40px 20px; width:478px;}
+.job_container .job ul li.verd{ float:left; color:#acc314; font-size:0.8em; font-weight:bold; margin-right: 10px;}
+.job_container .job ul li.verd2{ float:right; color:#acc314; font-size:0.8em; font-weight:bold; margin-right:10px;}
+.job_container .job ul li.verd3{ float:left; color:#acc314; font-size:0.8em; font-weight:bold; margin-top:20px;}
+.job_container .job ul li.titol{ float:left; width:457px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:10px; margin-bottom:12px;}
+.job_container .job ul li.data{ background-color:#acc314; float:left; width:100px; color:#FFF; font-size:0.8em; font-weight:bold; padding:4px 20px 4px 10px; margin: -4px 0 0 0;}
+.job_container .job ul li.preu{ background-color:#acc314; float:right; width:100px; color:#FFF; font-size:0.8em; font-weight:bold; padding:4px 30px 4px 10px; margin: -4px 0 0 0;}
+.job_container .job ul li p{ float:left; font-size:0.7em; line-height:14px; padding-bottom:10px; text-align:justify;}
+.job_container .job ul li a.inscribir{ float:left; border:0px; background:url("../images/images_actividades/boton_inscripcion.png") no-repeat scroll 0 0 #000000; color:#FFF; text-align: left; width:95px; height:18px; padding: 7px 0 0 15px; cursor:pointer; text-decoration:none; font-size:12px;}
+
+/********************************************************************************************************************** ESTILOS OUTLET   **************************************************************************************/
+#top_banner li.producte{ position:relative; float:left; width: 472px; color:#FFF; font-size:20px; z-index:2; padding:5px 30px; margin-left:-1px; cursor:pointer;}
+#top_banner li.cataleg{ position:relative; float:right; width: 450px; color:#FFF; font-size:20px; z-index:2; padding:5px 0 5px 37px; cursor:pointer;}
+#top_banner li.producteSel{ background:url('../images/images_outlet/fons_buto.png'); position:relative; float:left; width: 472px; color:#FFF; font-size:20px; z-index:2; padding:5px 30px; margin-left:-1px; cursor:pointer;}
+#top_banner li.catalegSel{ background:url('../images/images_outlet/fons_buto2.png'); position:relative; float:right; width: 450px; color:#FFF; font-size:20px; z-index:2; padding:5px 0 5px 37px; cursor:pointer;}
+#top_banner li span{ font-size:25px}
+#top_banner img{ margin-top:-35px;}
+	
+.img_oferta{float:left; width:476px; margin:15px 30px 0 5px;}
+.img_oferta ul{margin-bottom:10px;}
+.img_oferta ul li.descarga{ float:right; font-size:0.8em;}
+.img_oferta ul li.descarga a{ color:#000; text-decoration:none;}
+.img_oferta ul li.descarga a img{ float:left; margin:-6px 5px 0 0;}
+
+.oferta{ float:right; margin:15px 12px 0 0; width:500px;}
+.oferta ul{ margin-bottom:10px;}
+.oferta ul li.titol{ float:left; width:479px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:10px; margin-bottom:10px;}
+.oferta ul li.icono{ float:left; margin-right:5px;}
+.oferta ul li.subtitol{ float:left; color:#acc314; font-size:0.8em; font-weight:bold; margin:10px 0 5px 0;}
+.oferta ul li p{ font-size:0.7em; line-height:14px; padding-bottom:10px; text-align:justify;}
+
+#outlet_catalogo{ margin-top: 20px;}
+#outlet_catalogo .element_container{margin-top:25px;}
+#outlet_catalogo .element{border:2px solid #000; width:316px; height: 230px; float:left; margin:0 0 0 15px;}
+#outlet_catalogo .element p{background-color:#000; width:100%; height: 43px; color:#FFF; font-size: 0.7em;line-height: 12px}
+#outlet_catalogo .element p span.titol{float:left; padding: 10px 0 0 5px;}
+#outlet_catalogo .element p span.preu{float:right; padding: 8px 5px 0 0; font-size:1.2em;}
+
+#outlet_galeria{ padding-bottom:20px;}
+
+.nores{width:1024px; text-align:center;}
+.nores .quadre_text{border:1px solid #acc314; margin:auto; padding:20px 0; text-align:center; width:500px;}
+.nores .quadre_text img{margin-top: 20px; width: 200px;}
+
+/********************************************************************************************************************** ESTILOS COMPRA   **************************************************************************************/
+#item_compra{  float:left; width:600px; padding: 15px 0 0 10px;}
+#item_compra img{ margin:0 35px;}
+#item_compra ul{ margin-bottom:10px;}
+#item_compra ul.fonsGris{ background-color:#DDD;}
+#item_compra ul li{ float:right;}
+#item_compra ul li.nomProducte{ float:left; width:480px;}
+#item_compra ul li.gastos{ float:left; width:480px; text-align:right;}
+#item_compra ul li.preuTotal{ font-weight:bold;}
+#item_compra ul li.titol{ float:left; width:580px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:5px 10px;}
+#item_compra ul li.titolPetit{ width:479px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:10px; margin-bottom:10px;}
+
+#botons_compra{ float:left; margin: 403px 0 0 20px;}
+.botoDoble{ background:url('../images/boton_opcion_compra.jpg'); background-repeat:no-repeat; width: 177px; color:#FFF; font-size:0.8em; padding:5px 10px 3px 15px; margin-bottom:15px; cursor:pointer;}
+
+/********************************************************************************************************************** ESTILOS FACTURACION   **************************************************************************************/
+#info_compra{  float:left; width:380px; padding: 15px 0 0 10px; font-size:0.7em;}
+#info_compra .item{  margin-bottom:10px;}
+#info_compra span{ float:right;}
+#info_compra ul li.titolPetit{ width:360px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:5px 10px; margin-bottom:10px;}
+#info_compra ul{ margin-bottom:10px;}
+#info_compra ul.fonsGris{ background-color:#DDD;}
+#info_compra ul li{ float:right;}
+#info_compra ul li.fotoProducte{ float:left; margin-right:15px;}
+#info_compra ul li.nomProducte{ float:left; width:210px; padding-left:5px; height:20px; margin-top:10px;}
+#info_compra ul li.nomProducte select{ border:1px solid #acc314;}
+#info_compra ul li.gastos{ float:left; width:260px; text-align:right;}
+#info_compra ul li.preuTotal{ font-weight:bold;}
+#info_compra li a{ text-decoration:none; color:#acc314; font-weight:bold;}
+
+#datos_factura{ float:right; width:585px; font-size:0.8em; padding:15px 15px 0 0; margin-bottom: 30px;} 
+#datos_factura ul{ padding-bottom:25px;}
+#datos_factura p{ width:565px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:5px 10px;}
+#datos_factura li{ margin-top:12px;}
+#datos_factura label.barra{ float:right; color:#acc314; font-size:1.6em; margin:0 10px;}
+#datos_factura input{ float:right; border:1px solid #acc314; width:300px;}
+#datos_factura input.petit{ float:right; border:1px solid #acc314; width:90px;}
+#datos_factura input[type=submit]{ float:right; border:0px; background:url("../images/images_actividades/boton_inscripcion.png") no-repeat scroll 0 0 #000000; color:#FFF; text-align: left; width:150px; height:24px; padding: 0 0 2px 15px; cursor:pointer;}
+#datos_factura select{ float:right; border:1px solid #acc314; width:302px;}
+#datos_factura  input[type=checkbox]{ float:left; width:auto; margin-left:0;}
+#datos_factura span{ float:left; margin: 5px 0 0 5px; font-size:10px; font-weight:bold; width:300px;}
+#datos_factura span a{ color:#acc314; text-decoration:none;}
+
+#datos_factura #mdtxt{ float:none; line-height: 1.8em} /*texto casilla Mismos datos de facturación*/
+
+#fp{margin-top: -0.615em} /*8/13px*/
+
+#datos_factura .radiobtns {float:right;}
+#datos_factura .radiobtns input{width:auto; float:none;}
+#datos_factura .radiobtns label{width:auto; float:none;}
+#datos_factura .info {}
+	#datos_factura .info p {padding:10px; font-size:12px; line-height:16px;}
+	
+#info_compra ul.info {}
+	#info_compra ul.info li {padding:10px; font-size:12px; line-height:16px;}
+
+a.help span { display: none; width:160px; text-align:left; color:#FFF;}
+a.help:hover { position: relative;}
+a.help:hover span { display: block; position: absolute; padding:4px 10px; border: 1px solid black; background-color: #000;}
+
+a.ee{color:#FFF; text-decoration:none;}
+a.ee:visited{color:#FFF; text-decoration:none;}
+
+
+.cesta-transferencia{padding:2em !important;}
+.cesta-transferencia h2{  background-color:#acc314; padding: 3px; font-size: 13px; color: #1f1a17; margin-bottom: 25px}
+
+.cesta-transferencia p{ color:#000; font-size:12px; font-weight:bold; margin-bottom: 25px }
+
+
+/*
+.dato_trans{ margin: 2em}*/
+.dato_trans ul{ margin-bottom: 30px;}
+.dato_trans li{ margin-bottom: 20px; font-size: 12px }
+.dato_trans p{ margin-bottom: 15px }
+.dato_trans li span{ padding-left: 15px }
+
+.dato_trans h3 {background-color:#999999; padding: 3px; font-size: 14px; color: #1f1a17; margin-bottom: 25px}
+.dato_trans h4 {background-color:#999999; padding: 3px; font-size: 14px; color: #1f1a17; margin-bottom: 15px}
+/********************************************************************************************************************** ESTILOS FACTURACION EVENTO   **************************************************************************************/
+#info_compra_event{  float:left; width:380px; padding: 15px 0 0 10px; font-size:0.7em;}
+#info_compra_event ul li.fotoEvent{ float:left; margin-right:15px;}
+#info_compra_event .item{  margin-bottom:10px;}
+#info_compra_event ul li{ float:left;}
+.form_detalle_evento input {border:1px solid #acc314; width:140px; margin:10px 0;}
+.form_detalle_evento img {margin-top:8px;}
+#info_compra_event ul li.nomEvent{ float:left; font-weight:bold; padding:5px 0px;}
+#info_compra_event ul li.textPreu{ float:left; padding:5px 0px;}
+#info_compra_event ul li.preu{ float:left; background-color:#acc314; color:#FFF; font-weight:bold; padding:5px 10px; margin-left:10px;}
+#info_compra_event ul li.titolPetit{ width:360px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:5px 10px; margin-bottom:10px;}
+/*#info_compra_event ul{ margin-bottom:10px;}*/
+
+#datos_factura_actividad{ float:right; width:585px; font-size:0.8em; padding:15px 15px 0 0; margin-bottom: 30px;} 
+#datos_factura_actividad ul{ margin-bottom:30px;}
+#datos_factura_actividad p{ width:565px; background-color:#acc314; color:#FFF; font-size:1.3em; font-weight:bold; padding:5px 10px;}
+#datos_factura_actividad li{ margin-top:17px;}
+#datos_factura_actividad li .selector{ margin-left:230px;}
+#datos_factura_actividad input[type=text]{ float:right; border:1px solid #acc314; width:450px;}
+#datos_factura_actividad select{ float:right; border:1px solid #acc314; width:50px;}
+#datos_factura_actividad input[type=submit]{ float:right; border:0px; background: url('../images/images_actividades/boton_inscripcion.png') no-repeat #000; color:#FFF; text-align: left; width:165px; height:24px; padding: 0 0 2px 15px; cursor:pointer;}
+
+.error_pago{border: 1px solid #FF2222; line-height:22px; margin:10px; padding:20px 100px; text-align:center;}
+
+
+a.help span { display: none; width:160px; text-align:left; color:#FFF;}
+a.help:hover { position: relative;}
+a.help:hover span { display: block; position: absolute; padding:4px 10px; border: 1px solid black; background-color: #000;}
+
+a.ee{color:#FFF; text-decoration:none;}
+a.ee:visited{color:#FFF; text-decoration:none;}
+
+/***********************************************************************************************************************  ESTILOS FAQS ********************************************************************************************/
+#faqs_contingut{ float:left; margin-top:-682px; padding:20px;}
+#faqs_requadres{ float:left; }
+#faqs_requadres span{ margin-bottom:20px; font-size:5.0em;}
+#faqs_requadres ul{ margin-bottom:15px;}
+#faqs_requadres li{ background-color:#BBB; font-size:1.0em; font-weight:bold; padding:4px; width:300px; height: 15px;}
+#faqs_desplegables{ display:none; line-height: 18px}
+#faqs_desplegables li.titol{ background-color:#BBB; font-size:1.0em; font-weight:bold; padding:4px 4px 4px 130px; text-align:center; height:15px;}
+#faqs_desplegables li.text{ font-size:0.8em; width:450px; padding:15px 0 0 130px; text-align:justify;}
+
+/***********************************************************************************************************************  ESTILOS FINANCIACION ********************************************************************************************/
+#fons_finan{float:left;}
+#finan{float:left; margin-top:-931px; padding:20px;}
+#finan h3{ margin-bottom:20px; font-size:6.8em; font-weight:bold; opacity:0.4;}
+#finan ul{ margin-bottom:10px;}
+#finan .req_transparent{ background-color:#000; color:#FFF; padding:15px 10px; margin-right: 80px; opacity:0.4;}
+#finan .req_transparent div{ opacity:1.0;}
+#finan .section{ float:left; width:40%; margin: 0 50px 50px 0;}
+#finan .section h1{ float:left; margin-top:15px; font-weight:bold;}
+#finan .section li.texto{ float:left; font-size:0.9em; margin-left:45px;}
+#finan .section img{ float:left; margin:10px 15px 0px 10px;}
+#finan .section span{ color: white; float: left; font-size: 0.9em; padding-top: 10px; width: 80%;}
+
+
+/***********************************************************************************************************************  ESTILOS TIENDAS ********************************************************************************************/
+.tenda { border-bottom:2px solid #FFF;} 
+.tenda .nom_tenda{background-color: #000000; border-bottom:2px solid #acc314; color: #FFFFFF; padding: 10px 15px;}
+.tenda #fons_tenda{ float:left;}
+.tenda .nom_tenda ul{ margin-bottom:5px;}
+.tenda .nom_tenda li.titol1{ font-size:1.2em;}
+.tenda .nom_tenda li.titol2{ font-size:2.0em; font-weight:bold;}
+
+.tenda .section_tienda{ float:left; margin:-422px 0 0 0px; padding: 30px 30px 0 25px; width:969px;}
+.tenda .section_tienda #info{ float:left;}
+.tenda .section_tienda #info ul{ margin-bottom:10px;}
+.tenda .section_tienda #info .tienda_icono{ float:left; margin-right: 5px;}
+.tenda .section_tienda #info .tienda_titol{ float:left; color:#acc314; font-size:1.2em; font-weight: bold; margin-bottom:15px;}
+.tenda .section_tienda #info .tienda_info{ color:#FFF; font-size:1.0em; width: 500px;}
+.tenda .section_tienda #map{ float:right; margin-right:20px;}
+.tenda .section_tienda #map ul li{ float:left; background-color:#FFF; color:#acc314; font-size:0.9em; padding: 2px 0; width: 187px; margin-top:10px; text-align:center;}
+.tenda .section_tienda #map ul li.first{ margin-right: 25px;}
+.tenda .section_tienda #map ul li a{color:#acc314; text-decoration:none;}
+.tenda .section_tienda #map ul li a:visited{color:#acc314; text-decoration:none;}
+
+
+/***********************************************************************************************************************  ESTILOS EMPRESA *********************************************************************************/
+#fons_empresa{ float:left;}
+#valores{ float:left; margin:-2826px 36px; width:93%}
+#valores .title{ margin-bottom:20px; color:#FFF; font-size:4.4em; font-weight:bold; opacity: 0.6; padding-top:20px;}
+#valores .requadre_transparent{ background-color:#FFF; position:relative; z-index:0; float:left; width:100%; height:520px; opacity:0.4;}
+#valores .contingut{ float:left; margin-top:-520px; position:relative; z-index:1;}
+#valores .contingut ul.fila li{ float:left;}
+#valores .contingut ul.fila li.logo{ padding: 20px 0 0 40px;}
+#valores .contingut ul.fila li.coletilla{ line-height:25px; font-size:1.0em; padding: 30px 15px 0 40px;}
+#valores .contingut ul.fila li span{ font-weight:bold;}
+#valores .valor{ float:left; width:400px; height:100px; margin:30px 0 0 30px;}
+#valores .contingut .valor .text_valor{ font-size:0.8em; padding:10px 0 0 20px; width:310px; text-align:justify;}
+
+#historia_contenido{ float:left; margin:-2196px 36px;}
+#historia_contenido .title{ margin-bottom:20px; color:#FFF; font-size:4.4em; font-weight:bold; opacity: 0.6; padding-top:50px;}
+#historia_contenido .historia{ }
+#historia_contenido .historia ul li.any{ float:left; color:#FFF; font-size:50px; width:160px;}
+#historia_contenido .historia ul li.requadre{ float:left; background-color:#FFF; color:#000; font-weight:bold; font-size:30px; padding:7px 0 3px 5px; width:782px; margin-top: 5px;}
+#historia_contenido .historia ul li.cos{ float:left; color:#FFF; font-size:0.8em; margin:25px 0 40px 160px; text-align:justify; line-height:18px;}
+#historia_contenido .historia ul li .imatges_first{ float:left; margin:0 0 100px 0; background-color:#FFFFFF; text-align:center; width:230px;}
+#historia_contenido .historia ul li .imatges{ float:left; margin:0 0 100px 10px; background-color:#FFFFFF; text-align:center; width:230px;}
+#historia_contenido .historia ul li img{ max-height:157px; max-width:230px;}
+
+/***********************************************************************************************************************  PASARELA ****************************************************************************************/
+#pasarela{ line-height: 25px; padding: 20px 50px;}
+#img_pasarela img{ float: right; margin-right: 50px; width: 200px;}
+
+/***********************************************************************************************************************  ANTERIORES ******************************************************************************************/
+
+
+
+#footer_pago li {
+	display: inline-block;
+        padding: 0;
+        text-align: left
+}
+#footer_pago ul{
+        font-size: 11px;
+        background-color: #000000;
+
+
+        }
+p.tarjetas {
+    background: url("../images/sprite.png") 0 0 no-repeat;
+    display: block;
+    text-align: left;
+    text-indent: -10000px;
+    width: 94px;
+    height: 18px;
+    margin:0 1em;
+}
+
+li.confianza{
+    margin-left: 1.5em;
+
+}
+li.confianza img{
+    vertical-align: text-top;
+
+}
+#footer_pago{
+    text-align: right;
+    background-color: #000000;
+    border-top: 1px solid #8BB816;
+    color: #FFFFFF;
+    padding: 1em 0 0 0;
+    margin: 1em auto 0 auto;
+    min-width: 1024px;
+    width: 1024px;
+
+
+
+
+/*@font-face {
+    font-family: 'swiss921_btregular';
+    src: url('../fonts/Swiss_921_BT/font_-_truetype_-_swiss_921_bt-webfont.eot');
+    src: url('../fonts/Swiss_921_BT/font_-_truetype_-_swiss_921_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Swiss_921_BT/font_-_truetype_-_swiss_921_bt-webfont.woff') format('woff'),
+         url('../fonts/Swiss_921_BT/font_-_truetype_-_swiss_921_bt-webfont.ttf') format('truetype'),
+         url('../fonts/Swiss_921_BT/font_-_truetype_-_swiss_921_bt-webfont.svg#swiss921_btregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'swis721_cn_btroman';
+    src: url('../fonts/Swiss721_Condensed/font_-_truetype_-_swiss_721_condensed_bt-webfont.eot');
+    src: url('../fonts/Swiss721_Condensed/font_-_truetype_-_swiss_721_condensed_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Swiss721_Condensed/font_-_truetype_-_swiss_721_condensed_bt-webfont.woff') format('woff'),
+         url('../fonts/Swiss721_Condensed/font_-_truetype_-_swiss_721_condensed_bt-webfont.ttf') format('truetype'),
+         url('../fonts/Swiss721_Condensed/font_-_truetype_-_swiss_721_condensed_bt-webfont.svg#swis721_cn_btroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+
+
+/*#lineaSeparacionMenu{ width:100%; background-color:#000; height:20px; border:none; }*/
+
+
+/****  COLUMNAS INFERIOR  ***/
+
+/*#columnaIzquierda{ clear:both; width:323px;  margin-left:12px; float:left; }
+.titularHomeIzq{ width:310px; background-color:#000; color:#FFF; padding-left:13px; margin-top:25px; height:17px; padding-top:5px; font-size:16px; }
+#columnaIzquierda p{ margin-top:10px; font-size:14px; }
+#columnaIzquierda ul{ list-style-type:square; font-size:14px; margin-left:20px;}
+#columnaIzquierda ul li{ list-style-type:square; margin-top:15px;}
+#columnaIzquierda p{ margin-top:10px; font-size:14px; }
+
+#columnaDerecha{ float:left; width:663px;  margin-left:12px; margin-bottom:15px; }
+.titularHomeDer{ width:650px; background-color:#000; color:#FFF; padding-left:13px; margin-top:25px; height:17px; padding-top:5px; font-size:16px; }
+#columnaDerecha p{ margin-top:10px; font-size:14px; }
+#columnaDerecha img{ float:left; margin-top:15px; padding-right:12px;}*/

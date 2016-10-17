@@ -1,0 +1,280 @@
+/*-------------> BAROUSEL */
+
+.barousel
+{
+    position:absolute;
+	/*background-color:#000;*/
+    width:213px;
+    /*height:401px;*/
+    /*border-top:3px solid #000;*/
+}
+
+.barousel_image
+{
+    float:left;
+    z-index:10;
+    width:213px;
+    height:121px;
+	overflow:hidden;
+}
+
+.barousel_image img
+{
+    display:none;
+    max-width:213px;
+}
+
+.barousel_image img.default
+{    
+    display:block;
+}
+
+.barousel_image img.current
+{
+    z-index:10;
+}
+
+.barousel_image img.previous
+{
+    z-index:5;
+}
+
+.barousel_content
+{
+    float:left;
+background-color:#000;
+    /*padding:15px 18px 0 18px;*/    
+    z-index:50;
+    color:#fff;
+    width:213px;
+}
+
+.barousel_content div
+{
+    display:none;    
+}
+
+.barousel_content div.default
+{
+    display:block;    
+}
+
+/*.barousel_content p
+{
+    font-size:13px;
+    font-weight:normal; 
+    line-height:17px;   
+}*/
+.barousel_content p.verd{ color:#acc314; height: 25px; font-size:12px; padding:10px 0 0 10px;}		
+.barousel_content p.blanc{ color:#FFF; height: 40px; font-size:8px; padding:10px 5px 0 10px; line-height:10px; text-align:justify;}
+.barousel_content p.news{ color:#FFF; font-size:8px; float:right; padding:10px 5px 0 5px;}
+.barousel_content p.news a{ color:#FFF; text-decoration:none;}
+.barousel_content p.news a:visited{ color:#FFF; text-decoration:none;}
+
+.barousel_content p.header
+{
+    font-size:28px;
+    font-weight:normal;
+    line-height:28px;
+    color:#fff55b;
+}
+
+.barousel_content a,
+.barousel_content a:hover
+{
+    color:#fff55b;
+    background-color:transparent !important;
+}
+
+.barousel_nav
+{
+    float:left;   
+    background:#000;
+    z-index:20;
+    width:213px;
+}
+
+.barousel_nav .counter
+{    
+    float:right;
+    font-size:0.75em;
+    color:#fff;
+    margin:3px 5px 0 0;
+}
+
+.barousel_nav ul
+{
+    float:right;
+    padding:0;
+    margin:0;
+}
+
+.barousel_nav li
+{
+    float:left;
+    padding-left:3px;
+    font-size:0;
+    line-height:0;
+    list-style:none;
+}
+
+.barousel_nav li a
+{
+    display:block;
+    width:25px;
+    height:20px;
+    background-color:#4d4d4d;
+    font-size:0;
+    line-height:0;
+    text-decoration:none;
+}
+
+.barousel_nav li a:hover
+{
+    background-color:#6e6e6e;
+}
+
+.barousel_nav li a.current
+{
+    background-color:#fff55b;
+}
+
+.barousel_nav li.prev a
+{
+    background-image:url(../images/barousel_link_previous.gif);
+    background-repeat:no-repeat;
+    background-position:0 0;
+}
+
+.barousel_nav li.next a
+{
+    background-image:url(../images/barousel_link_next.gif);
+    background-repeat:no-repeat;
+    background-position:0 0;
+}
+
+.barousel img.ajax_loader
+{
+    display:none;
+    position:absolute;
+    z-index:99;
+    top:70px;
+    left:135px;
+}
+
+/*-------------> THSLIDE */
+.thslide
+{    
+    background:#000;
+    width:500px;
+    height:68px;
+    border-top:3px solid #000;
+}
+
+.thslide_nav_previous
+{
+    float:left;    
+}
+
+.thslide_nav_next
+{
+    float:right;    
+}
+
+.thslide_nav_previous a,
+.thslide_nav_next a
+{
+    display:block;
+    width:19px;
+    height:68px;     
+    text-decoration:none;  
+    background-color:#4d4d4d;
+    background-repeat:no-repeat;    
+}
+
+.thslide_nav_previous a
+{
+    background-image:url(../images/thslide_link_previous.gif);    
+    background-position:0 0;
+}
+
+.thslide_nav_next a
+{
+    background-image:url(../images/thslide_link_next.gif);    
+    background-position:100% 0;
+}
+
+.thslide_nav_previous a:hover,
+.thslide_nav_next a:hover
+{
+    background-color:#6e6e6e;
+}
+
+.thslide_list
+{
+    float:left;
+    overflow:hidden;   
+    position:relative; 
+    width:462px;
+    height:68px;    
+}
+
+.thslide_list ul
+{
+    float:left;
+    width:9000px;
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+
+.thslide_list li
+{
+    float:left;
+    margin-right:3px;
+}
+
+.thslide_list li a
+{
+    display:block;
+    position:relative;
+    width:90px;
+    height:68px;    
+    text-decoration:none;
+}
+
+.thslide_list li a img
+{
+    position:absolute;
+}
+
+.thslide_list li a span
+{
+    position:absolute;
+    display:block;
+    width:84px;
+    height:62px;    
+}
+
+.thslide_list li a:hover span,
+.thslide_list li a.current span
+{    
+    border:3px solid #fff55b;
+}
+
+/* Specific implementation */
+#barousel_thslide
+{
+    height:446px;
+}
+
+#barousel_thslide .barousel_content
+{
+    bottom:81px;
+}
+
+#thslide_barousel_nav
+{
+    position:absolute;
+    bottom:0;
+}

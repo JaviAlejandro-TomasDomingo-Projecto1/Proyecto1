@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.hidden {display:none !important;}
+img { -ms-interpolation-mode: bicubic; }
+
+/****  SUBMENU  ***/
+.submenu a:hover, .submenu a.active{background:#aac314;}
+/****  MARCAS FOOTER  ***/
+/*
+#marcas{ width: 100%; margin-top:30px;}
+#marcas ul{ margin-bottom:20px;}
+#marcas li{ margin:0px 25px; display:inline; height:100px; width:auto;}
+#marcas li img {vertical-align:middle;}
+#marcas li:first-child{ margin:0 25px 0 0;}
+#marcas div{ margin:10px 0 0 0;}
+*/
+
+/* IMAGEN PRODUCTO */
+
+#product_container .ico {
+    float: left;
+    margin: 10px 0 0 10px;
+    position: relative;
+    z-index: 2;
+}
+
+/* FAQS	 */
+#faqs_requadres {
+    margin-top: 15px;
+}
+
+#faqs_requadres .tit {cursor:pointer;}
+#faqs_requadres p.MsoTitulo {text-align:center; font-weight:bold; margin-bottom:5px;}
+
+.faq_hover{
+    color: #ACC131;
+    background-color: #000000 !important;
+}
+
+
+/*	LISTADO NOTICIAS	*/
+.galeria_item_noticia{}
+	.galeria_item_noticia .portada{display:block; width:299px; /*height:195px;*/ overflow:hidden; padding:0;}
+		.galeria_item_noticia .portada img{width:100%; position:relative;}
+	
+	.galeria_item_noticia .thumbnail{display:inline-block; width:95px; max-height:55px; overflow:hidden; padding:0;}
+		.galeria_item_noticia .thumbnail img{width:100%; position:relative;}
+
+#referencies li {text-transform:uppercase;}
+
+#banner_producte a, #banner_cataleg  a{color: #FFF; text-decoration:none;}
+
+/*#carrito_container{ position:absolute; width:1024px; z-index:5; margin:0 auto;}	*/
+#carrito li.cart_empty {color:rgba(255,255,255,0.25); text-decoration:none; float:right; padding:5px 0;}
+	#carrito li.cart_empty span { float: left; font-size: 0.6em; margin:5px 5px 0 0;}
+	
+#contanier_carrito{width:1024px; margin:0 auto !important;}
+#finestra_carrito{margin-right:0px !important;}
+	#finestra_carrito #requadre {padding:10px !important;}
+	#finestra_carrito #requadre h2 {padding:5px 0;}
+	
+	#finestra_carrito #requadre .item {display:block;}
+	#finestra_carrito #requadre .item .item_content{box-sizing:content-box !important; width:240px !important;}
+	
+	#carrito_container #finestra_carrito li.fin_compra a {text-decoration:none !important; color:#fff !important;}	
+
+/*
+#datos_factura span {
+    float: right;
+    width: 300px;
+	font-weight:bold;
+}
+*/
+
+.payment_result{padding:15px;}
+	.payment_result.ok {background:#BCFFA2;}
+	.payment_result.ko {background:#F79F9A;}
+	
+	
+#imatge_producte {width:630px; display:block; float:left; margin-left: -110px;}
+#imatge_producte .titol_desc { padding:15px; line-height:19px;}	
+
+.cc-cookies {display:none;}
+.cookie_law{position:fixed;left:0; right:0; bottom:0;  z-index:999; max-height:150px; background:#ccc;}
+	.cookie_law .content {margin:0 auto 0 auto; max-width:100%; text-align:center; color:#000; text-shadow:0 1px 0 rgba(255,255,255,0.7); font-size:15px; line-height:20px; background:#acc314; padding:15px 30px;}
+		.cookie_law .content p {font-size:15px; line-height:25px; margin-bottom:10px;}
+		.cookie_law .content a {display:inline-block;font-size:15px; line-height:20px; background:rgba(0,0,0,0.5); padding:5px 12px;color:#fff; text-shadow:0 -1px 0 rgba(0,0,0,0.7); text-decoration:none;}
+		
+.detalle_rti{padding:10px; background:#ACC314;}		
+	.detalle_rti img {margin-top:0;}
+	.detalle_rti a {margin-top:-10px; margin-left:5px; font-size:14px; max-width:290px; line-height:17px;}
+	
+#info_tie{}
+	#info_tie h3 {background-color: #acc314;color: #fff;font-size: 1.3em;font-weight: bold;padding: 5px 10px;width: 565px;}	
+	#info_tie p {background: none !important;color: #000;padding: 5px 10px; font-size:12px; font-weight:normal; line-height:15px;}	
+	#info_tie img{max-width:565px; height:auto;}
