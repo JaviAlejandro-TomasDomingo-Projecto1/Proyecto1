@@ -3,9 +3,31 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
+	MIrarlo
+	
+	<!-- <script type="text/javascript">
+		//<![CDATA[
+		function makeArray() {
+		for (i = 0; i<makeArray.arguments.length; i++)
+		this[i + 1] = makeArray.arguments[i];}
+		var months = new makeArray('Enero','Febrero','Marzo','Abril','Mayo',
+		'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+		var date = new Date();
+		var day = date.getDate();
+		var month = date.getMonth() + 1;
+		var yy = date.getYear();
+		var year = (yy < 1000) ? yy + 1900 : yy;
+		document.write("Hoy es " + day + " de " + months[month] + " del " + year);
+		//]]>
+	</script> -->
+
 </head>
 <body>
 	<form name="f1" action="161010_exercici1.php" method="GET" onsubmit="return validar();">
+		Fecha del post:<br/>
+
+
+		<input type="text" name="post" size="35" /><br/><br/>
 		Título:<br/>
 		<input type="text" name="titulo" size="35"/><br/><br/>
 		Mensaje:<br/>
