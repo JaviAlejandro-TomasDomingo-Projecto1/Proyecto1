@@ -1,0 +1,29 @@
+Para comprobar al salir de el formulario:--> (((( <input type="text" onblur="myFunction()"> ))))
+
+	Enter your name: <input type="text" id="fname" onblur="myFunction()">
+	<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+	<script>
+	function myFunction() {
+   		 var x = document.getElementById("fname");
+    		x.value = x.value.toUpperCase();
+	}
+	</script>
+					( http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onblur )
+
+
+Para avisar que entras en el formulario , para poner un pop upp 
+
+	Enter your name: <input type="text" onfocus="myFunction(this)">
+
+	<p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+
+	<script>
+		function myFunction(x) {
+  		  x.style.background = "yellow";
+		}
+	</script>
+					( http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onfocus )
+
+
+
