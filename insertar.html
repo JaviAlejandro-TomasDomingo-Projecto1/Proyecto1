@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-
-</head>
-<body>
+	<head>
+		<title></title>
+	</head>
+	<body>
 	<form name="f1" action="161010_exercici1.php" method="GET" onsubmit="return validar();">
 		Fecha del post:<br/>
 		<script type="text/javascript">
@@ -26,8 +24,8 @@
 		Título:<br/>
 		<input type="text" name="titulo" size="35"/><br/><br/>
 		Mensaje:<br/>
-		<textarea type="text" name="mensaje" rows="10" cols="30" maxlength="30"></textarea><br/><br/>
-		Fecha de robo:<br/>
+		<textarea type="text" name="mensaje" rows="10" cols="30" maxlength="200"></textarea><br/><br/>
+		Cuando la has encontrado:<br/>
 		<div><input type="date" name="cumpleanios" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
 		Ubicación:<br/>
 		<input type="radio" name="ubicaciones" />
@@ -128,17 +126,15 @@
 						<option value="la Vemedia i la Pau">la Vemedia i la Pau</option>
 					</optgroup>
 			</select>
-			<img src="IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /><br/><br/>
-			<input type="radio" name="ubicaciones" />
-			Otras ubicaciones:<input type="text" name="otros" /><br/><br/>
+		<img src="IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /><br/><br/>
+		<input type="radio" name="ubicaciones" />
+		Otras ubicaciones:<input type="text" name="otros" /><br/><br/>
 		Marca:<br/>
 		<input type="text" name="marca" id="marca" size="20" maxlength="20" /><br/><br/>
 		Modelo:<br/>
 		<input type="text" name="modelo" id="modelo" size="20" maxlength="20" /><br/><br/>
 		Color:<br/><br/>
 		<input type="radio" name="colores" />
-		<!-- MIRAR ESTA SOLUCIÓN! -->
-		<!-- <input type="color" name="favcolor" value="#ff0000"> --> 
 		Selecciona el color:
 		<select name="color" id="color">
 				<option value="P0" selected>Color sólido</option>
@@ -155,7 +151,8 @@
 		</select>
 		<img src="IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /><br/><br/>
 		<input type="radio" name="colores" />
-		Multicolor:	<input type="text" name="multicolor" /><br/><br/>
+		Multicolor:	
+		<input type="text" name="multicolor" /><br/><br/>
 		Antigüedad:<br/><br/>
 		<select name="nivel">
 			<option value="0" selected>Elegir opción</option>
@@ -165,7 +162,14 @@
 		</select><br/><br/>
 		Nº serie:<br/><br/>
 		<input type="text" name="numero" id="numero" size="20" maxlength="6" /><br/><br/>
-		<input type="submit" value="Dar de alta"/>
+		<input type="submit" value="Dar de alta"/><br/><br/>
+		Foto:<br/><br/>
+		<form enctype="multipart/form-data" action="../uploader2.php" method="POST">
+		<input name="uploadedfile" type="file" />
+		<input type="submit" value="Subir archivo" /><br/><br/>
+		Compensación:<br/><br/>
+		<input type="number" name="compensacion">€
+		</form>
 	</form>
-</body>
+	</body>
 </html>
