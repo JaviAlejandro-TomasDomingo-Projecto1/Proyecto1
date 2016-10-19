@@ -243,9 +243,9 @@ function disable22() {
 
 
 			<p>Título:<p/><br/>
-			<input type="text" name="titulo" size="50" onblur="minusculas(value)"/><br/><br/>
+			<input type="text" name="titulo" size="100%" maxlength="50" onblur="minusculas(value)"/><br/><br/>
 			<p>Mensaje:</p><br/>
-			<textarea type="text" name="mensaje" rows="10" cols="30" maxlength="200"></textarea><br/><br/>
+			<textarea type="text" name="mensaje" rows="4" cols="100%" maxlength="200"></textarea><br/><br/>
 			<p>Fecha de robo:</p><br/>
 			<div><input type="date" name="fecha" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
 			<p>Ubicación:</p><br/>
