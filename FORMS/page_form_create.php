@@ -52,13 +52,13 @@
 </div>
 	<div id="header_nav_container">
 	    <div id="header_nav">
-	        <a href="index.html"><img src="http://www.tomasdomingo.com/imagenesPrueba/logo-domingo.png"></a>
+	        <a href="./index.html"><img src="http://www.tomasdomingo.com/imagenesPrueba/logo-domingo.png"></a>
 	        <ul>
 	            	<li><a href="es/estaticas/faqs/" >FAQS</a></li>
 	            	<li><a href="es/estaticas/trabaja-con-nosotros/" >TRABAJA CON NOSOTROS</a></li>
 	            	<li><a href="es/estaticas/tiendascontacto/" >TIENDAS/CONTACTO</a></li>
 	            <li><a href="https://www.facebook.com/pages/Tomas-Domingo-The-Bike-House/270923404115" title="Ver en facebook" target="_blank"><img src="http://www.tomasdomingo.com/imagenesPrueba/facebook-icono-domingo.jpg"></a></li>
-						<br/><li class="boton" style="float: right;padding-top: 10px;font-size: 13px;font-weight: 800;"><a href="page_form_search.html"><span>BUSCAR MI BICI PERDIDA</span></a></li>
+						<br/><li class="boton" style="float: right;padding-top: 10px;font-size: 13px;font-weight: 800;"><a href="page_form_search.php"><span>BUSCAR MI BICI PERDIDA</span></a></li>
 					</ul>
 	    </div>
 	</div>
@@ -196,7 +196,7 @@
 
 	    <div class="clear"><!-- CLEAR --></div>
     <!--Start FORM -->
-		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;"> Buscas una bici?<br/>Haz click <a style="color:blue;" href="page_form_search.html">Aquí</a></p>
+		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;"> Buscas una bici?<br/>Haz click <a style="color:blue;" href="page_form_search.php">Aquí</a></p>
 
 
 
@@ -205,7 +205,7 @@
 
 		<br/>
 		<br/>
-		<p style="color: black; text-align:center;padding-top: 10px;font-size: 13px;font-weight: 200;"> Buscas una bici? Haz click <a style="color:blue;" href="page_form_search.html">Aquí</a></p>
+		<p style="color: black; text-align:center;padding-top: 10px;font-size: 13px;font-weight: 200;"> Buscas una bici? Haz click <a style="color:blue;" href="page_form_search.php">Aquí</a></p>
 		<!--FINISH FORM -->
     <div class="clear"><!-- CLEAR --></div>
 
