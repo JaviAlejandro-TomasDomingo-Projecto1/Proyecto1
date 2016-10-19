@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+</head>
+<body>
+	<form name="f1" action="161010_exercici1.php" method="GET" onsubmit="return validar();">
+		Fecha del post:<br/>
+		<script type="text/javascript">
+		//<![CDATA[
+		function makeArray() {
+		for (i = 0; i<makeArray.arguments.length; i++)
+		this[i + 1] = makeArray.arguments[i];}
+		var months = new makeArray('Enero','Febrero','Marzo','Abril','Mayo',
+		'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+		var date = new Date();
+		var day = date.getDate();
+		var month = date.getMonth() + 1;
+		var yy = date.getYear();
+		var year = (yy < 1000) ? yy + 1900 : yy;
+		document.write("Hoy es " + day + " de " + months[month] + " del " + year);
+		//]]>
+	</script><br/><br>
+
+
+		
+		Título:<br/>
+		<input type="text" name="titulo" size="35"/><br/><br/>
+		Mensaje:<br/>
+		<textarea type="text" name="mensaje" rows="10" cols="30" maxlength="30"></textarea><br/><br/>
+		Fecha de robo:<br/>
+		<div><input type="date" name="cumpleanios" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
+		Ubicación:<br/>
+		<input type="radio" name="ubicaciones" />
+		<select name="ubicacion" id="ubicacion" required>
+				<option value="P0" selected>Selecciona tu barrio de Barcelona</option>
+					<optgroup label="Ciutat Vella">
+						<option value="el Raval" >el Raval</option>
+						<option value="el Gòtic" >el Gòtic</option>
+						<option value="la Barceloneta" >la Barceloneta</option>
+						<option value="Sant Pere, Santa Caterina y la Ribera" >Sant Pere, Santa Caterina y la Ribera</option>
+					</optgroup>
+					<optgroup label="Eixample">
+						<option value="el Fort Pienc">el Fort Pienc</option>
+						<option value="la Sagrada Familia">la Sagrada Familia</option>
+						<option value="la Dreta del Eixample">la Dreta de l'Eixample</option>
+						<option value="Antiga Esquerra del Eixample">Antiga Esquerra de l'Eixample</option>
+						<option value="Nova Esquerra de l'Eixample">Nova Esquerra de l'Eixample</option>
+						<option value="el Fort Pienc">Sant Antoni</option>
+					</optgroup>
+					<optgroup label="Sants-Montjuic">
+						<option value="el Poble Sec">el Poble Sec</option>
+						<option value="la Marina del Prat Vermell">la Marina del Prat Vermell</option>
+						<option value="la Marina de Port">la Marina de Port</option>
+						<option value="la Font de la Guatlla">la Font de la Guatlla</option>
+						<option value="Hostafrancs">Hostafrancs</option>
+						<option value="la Bordeta">la Bordeta</option>
+						<option value="Sants-Badal">Sants-Badal</option>
+						<option value="Sants">Sants</option>
+						<option value="Parc de Montjuic">Parc de Montjuïc</option>
+						<option value="Zona Franca-Port">Zona Franca-Port</option>
+					</optgroup>
+					<optgroup label="Les corts">
+						<option value="les Corts">les Corts</option>
+						<option value="la Maternitat i Sant Ramon">la Maternitat i Sant Ramon</option>
+						<option value="Pedralbes">Pedralbes</option>
+					</optgroup>
+					<optgroup label="Sarriá-San Gervasio">
+						<option value="Vallvidrera, Tibidabo i les Planes">Vallvidrera, Tibidabo i les Planes</option>
+						<option value="Sarria">Sarrià</option>
+						<option value="les Tres Torres">les Tres Torres</option>
+						<option value="Sant Gervasi-Bonanova">Sant Gervasi-Bonanova</option>
+						<option value="Sant Gervasi-Galvany">Sant Gervasi-Galvany</option>
+						<option value="el Putget i Farro">el Putget i Farró</option>
+					</optgroup>
+					<optgroup label="Gracia">
+						<option value="Vallcarca i els Penitents">Vallcarca i els Penitents</option>
+						<option value="el Coll">el Coll</option>
+						<option value="la Salut">la Salut</option>
+						<option value="Vila de Gracia">Vila de Gràcia</option>
+						<option value="el Camp de Grassot i Gracia Nova">el Camp d'en Grassot i Gràcia Nova</option>
+					</optgroup>
+					<optgroup label="Horta-Guinardó">
+						<option value="Baix Guinardo">Baix Guinardó</option>
+						<option value="Can Baro">Can Baró</option>
+						<option value="el Guinardó">el Guinardó</option>
+						<option value="la Font de Fargues">la Font d'en Fargues</option>
+						<option value="el Carmel">el Carmel</option>
+						<option value="la Teixonera">la Teixonera</option>
+						<option value="Sant Genis dels Agudells">Sant Genís dels Agudells</option>
+						<option value="Montbau">Montbau</option>
+						<option value="la Vall Hebron">la Vall d'Hebron</option>
+						<option value="la Clota">la Clota</option>
+						<option value="Horta">Horta</option>
+					</optgroup>
+					<optgroup label="Nou Barris">
+						<option value="Vilapicina-Torre Llobeta">Vilapicina-Torre Llobeta</option>
+						<option value="Porta">Porta</option>
+						<option value="el Turo de la Piera">el Turó de la Piera</option>
+						<option value="Can Peguera">Can Peguera</option>
+						<option value="la Guineueta">la Guineueta</option>
+						<option value="Canyelles">Canyelles</option>
+						<option value="Verdun">Verdun</option>
+						<option value="la Prosperitat">la Prosperitat</option>
+						<option value="la Trinitat Nova">la Trinitat Nova</option>
+						<option value="Torre Baró">Torre Baró</option>
+						<option value="Ciutat Meridiana">Ciutat Meridiana</option>
+						<option value="Vallbona">Vallbona</option>
+					</optgroup>
+					<optgroup label="San Andrés">
+						<option value="la Trinitat Vella">la Trinitat Vella</option>
+						<option value="Baro de Viver">Baró de Viver</option>
+						<option value="el Bon Pastor">el Bon Pastor</option>
+						<option value="Sant Andreu">Sant Andreu</option>
+						<option value="la Sagrera">la Sagrera</option>
+						<option value="el Congres i els Indians">el Congrés i els Indians</option>
+						<option value="Navas">Navas</option>
+					</optgroup>
+					<optgroup label="San Martín">
+						<option value="el Camp de Arpa del Clot">el Camp de l'Arpa del Clot</option>
+						<option value="el Clot">el Clot</option>
+						<option value="el Parc i la Llacuna del Poblenou">el Parc i la Llacuna del Poblenou</option>
+						<option value="la Vila Olimpica del Poblenou">la Vila Olímpica del Poblenou</option>
+						<option value="el Poblenou">el Poblenou</option>
+						<option value="Diagonal Mar i el Front Maritim del Poblenou">Diagonal Mar i el Front Marítim del Poblenou</option>
+						<option value="el Besos i el Maresme">el Besòs i el Maresme</option>
+						<option value="Provencals del Poblenou">Provençals del Poblenou</option>
+						<option value="Sant Marti de Provencals">Sant Martí de Provençals</option>
+						<option value="la Vemedia i la Pau">la Vemedia i la Pau</option>
+					</optgroup>
+			</select>
+			<img src="IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /><br/><br/>
+			<input type="radio" name="ubicaciones" />
+			Otras ubicaciones:<input type="text" name="otros" /><br/><br/>
+		Marca:<br/>
+		<input type="text" name="marca" id="marca" size="20" maxlength="20" /><br/><br/>
+		Modelo:<br/>
+		<input type="text" name="modelo" id="modelo" size="20" maxlength="20" /><br/><br/>
+		Color:<br/><br/>
+		<input type="radio" name="colores" />
+
+		<!-- MIRAR ESTA SOLUCIÓN! -->
+		
+		<!-- <input type="color" name="favcolor" value="#ff0000"> --> 
+		Selecciona el color:
+		
+		<select name="color" id="color">
+				<option value="P0" selected>Color sólido</option>
+					<option value="Negro">Negro</option>
+					<option value="Azul">Azul</option>
+					<option value="Verde">Verde</option>
+					<option value="Amarillo">Amarillo</option>
+					<option value="Naranja">Naranja</option>
+					<option value="Rojo">Rojo</option>
+					<option value="Lila">Lila</option>
+					<option value="Rosa">Rosa</option>
+					<option value="Blanco">Blanco</option>
+					<option value="Marrón">Marrón</option>
+		</select>
+		<img src="IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /><br/><br/>
+		<input type="radio" name="colores" />
+		Multicolor:	<input type="text" name="multicolor" /><br/><br/>
+		Antigüedad:<br/><br/>
+		<select name="nivel">
+			<option value="0" selected>Elegir opción</option>
+			<option value="adm"> - de 1 año</option>
+			<option value="edi">Entre 1 año hasta 3 años </option>
+			<option value="usu"> + de 3 años</option>
+		</select><br/><br/>
+		Nº serie:<br/><br/>
+		<input type="text" name="numero" id="numero" size="20" maxlength="6" /><br/><br/>
+		<input type="submit" value="Dar de alta"/>
+	</form>
+
+
+</body>
+</html>

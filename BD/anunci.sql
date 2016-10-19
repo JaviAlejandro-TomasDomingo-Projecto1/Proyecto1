@@ -37,7 +37,7 @@ CREATE TABLE `anunci` (
   `anu_color` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `anu_antiguitat` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
   `anu_descripcio` text COLLATE utf8_spanish_ci NOT NULL,
-  `anu_numero_serie` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `anu_numero_serie` varchar(6) COLLATE utf8_spanish_ci DEFAULT NULL,
   `anu_foto` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `anu_compensacio` decimal(4,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
