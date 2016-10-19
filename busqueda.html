@@ -3,9 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	MIrarlo
-	
-	<!-- <script type="text/javascript">
+
+</head>
+<body>
+	<form name="f1" action="161010_exercici1.php" method="GET" onsubmit="return validar();">
+		Fecha del post:<br/>
+		<script type="text/javascript">
 		//<![CDATA[
 		function makeArray() {
 		for (i = 0; i<makeArray.arguments.length; i++)
@@ -19,15 +22,10 @@
 		var year = (yy < 1000) ? yy + 1900 : yy;
 		document.write("Hoy es " + day + " de " + months[month] + " del " + year);
 		//]]>
-	</script> -->
-
-</head>
-<body>
-	<form name="f1" action="161010_exercici1.php" method="GET" onsubmit="return validar();">
-		Fecha del post:<br/>
+	</script><br/><br>
 
 
-		<input type="text" name="post" size="35" /><br/><br/>
+		
 		Título:<br/>
 		<input type="text" name="titulo" size="35"/><br/><br/>
 		Mensaje:<br/>
@@ -140,13 +138,13 @@
 		<input type="text" name="marca" id="marca" size="20" maxlength="20" /><br/><br/>
 		Modelo:<br/>
 		<input type="text" name="modelo" id="modelo" size="20" maxlength="20" /><br/><br/>
-		Color:<br/>
+		Color:<br/><br/>
 		<input type="radio" name="colores" />
 
 		<!-- MIRAR ESTA SOLUCIÓN! -->
-		<!-- Selecciona el color:
-		<input type="color" name="favcolor" value="#ff0000"> -->
-
+		
+		<!-- <input type="color" name="favcolor" value="#ff0000"> --> 
+		Selecciona el color:
 		
 		<select name="color" id="color">
 				<option value="P0" selected>Color sólido</option>
@@ -164,15 +162,15 @@
 		<img src="IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /><br/><br/>
 		<input type="radio" name="colores" />
 		Multicolor:	<input type="text" name="multicolor" /><br/><br/>
-		Antigüedad:<br/>
+		Antigüedad:<br/><br/>
 		<select name="nivel">
 			<option value="0" selected>Elegir opción</option>
 			<option value="adm"> - de 1 año</option>
 			<option value="edi">Entre 1 año hasta 3 años </option>
 			<option value="usu"> + de 3 años</option>
 		</select><br/><br/>
-		Nº serie:<br/>
-		<input type="text" name="numero" id="numero" size="20" maxlength="6" /><br/>
+		Nº serie:<br/><br/>
+		<input type="text" name="numero" id="numero" size="20" maxlength="6" /><br/><br/>
 		<input type="submit" value="Dar de alta"/>
 	</form>
 
