@@ -1,6 +1,5 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
 <base href="./"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,6 +34,7 @@ function disable11() {
 	document.f1.ubicacion.disabled = true;
 	document.f1.ubicacion.value="P0";
 }
+
 function disable2() {
 		document.f1.multicolor.value="";
 		document.f1.multicolor.disabled=true;
@@ -44,16 +44,6 @@ function disable22() {
 	document.f1.multicolor.disabled= false;
 	document.f1.ecolor.disabled = true;
 	document.f1.ecolor.value="P0";
-}
-function validar(texto){
-
-	if (texto.length <2){ //si el texo es menor a 2
-		alert('El texto es muy corto');
-	}
- 	var x = document.getElementById("fname");
-	x.value = x.value.toUpperCase();
-
-
 }
 </script>
 </head>
@@ -75,7 +65,7 @@ function validar(texto){
 	<div id="contanier_carrito">
         <div id="finestra_carrito">
             <div id="requadre">
-            	<h2>Su cesta</h2>
+            	<p>Su cesta</p>
               <p class="cart_empty_box">No hay productos en su cesta</p>
             </div>
             <div class="clear"><!-- CLEAR --></div>
@@ -230,10 +220,11 @@ function validar(texto){
 
 	    <div class="clear"><!-- CLEAR --></div>
     <!--Start FORM -->
-		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;"> Buscas una bici?<br/>Haz click <a style="color:blue;" href="page_form_search.php">Aquí</a></p>
-		<form name="f1" action="PHP/page_form_create.php" method="GET" onsubmit="return validar();">
-			Fecha del post:<br/>
-			<script type="text/javascript">
+		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;" >Has encontrado una bici?<br/>Crea tu anuncio <a style="color:blue;" href="page_form_create.php">Aquí</a></p>
+
+		<form name="f1" action="161010_exercici1.php" method="GET" onsubmit="return validar();">
+			<p>Fecha del post:</p><br/>
+			<p><script type="text/javascript">
 			//<![CDATA[
 			function makeArray() {
 			for (i = 0; i<makeArray.arguments.length; i++)
@@ -247,15 +238,20 @@ function validar(texto){
 			var year = (yy < 1000) ? yy + 1900 : yy;
 			document.write("Hoy es " + day + " de " + months[month] + " del " + year);
 			//]]>
-			</script><br/><br>
-			Título:<br/>
-			<input type="text" onBlur="validar(value)" name="titulo" maxlength="50" size="100%"/><br/><br/>
-			Mensaje:<br/>
-			<textarea type="text" name="mensaje" rows="4" cols="100%" maxlength="200"></textarea><br/><br/>
-			Cuando la has encontrado:<br/>
+		</script></p><br/><br>
+
+
+
+			<p>Título:<p/><br/>
+			<input type="text" name="titulo" size="100%" maxlength="50" onblur="minusculas(value)"/><br/><br/>
+			<p>Mensaje:</p><br/>
+			<textarea type="text" value="anu_descripcio_robatori" name="mensaje" rows="4" cols="100%" maxlength="200"></textarea><br/><br/>
+			<p>Fecha de robo:</p><br/>
+			<div><input type="date" value="anu_data_robatori" name="fecha" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
+			<p>Ubicación:</p><br/>
 			<p  style="display:inline !important;"><input id="ubi1"class="selec_ubi"  onclick="disable1();" style="display:inline !important;" type="radio" checked="true" name="ubicaciones" />
 			Selecciona tu barrio de Barcelona:
-			<select name="ubicacion" id="ubicacion"  required>
+			<select value="anu_ubicacio_robatori" name="ubicacion" id="ubicacion"  required>
 
 					<option value="P0" selected>Elige una opción</option>
 						<optgroup label="Ciutat Vella">
@@ -356,10 +352,10 @@ function validar(texto){
 				<img src="../IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /></p><br/>
 				<p  style="display: inline;"><input class="otra_ubi"  onclick="disable11()" type="radio" name="ubicaciones" />
 				Otras ubicaciones:<input style="margin-left:116px;width: 296px;" type="text" id=" otros" name="otros" disabled/></p><br/><br/>
-				<p>Marca:<br/>
-			<input type="text" name="marca" id="marca" size="20" maxlength="20" /><br/><br/>
-			Modelo:<br/></p>
-			<input type="text" name="modelo" id="modelo" size="20" maxlength="20" /><br/><br/>
+			<p>Marca:</p><br/>
+			<input type="text" value="anu_marca" name="marca" id="marca" size="20" maxlength="15" /><br/><br/>
+			<p>Modelo:</p><br/>
+			<input type="text" value="anu_model" name="modelo" id="modelo" size="20" maxlength="25" /><br/><br/>
 			<p>Color:</p><br/>
 			<p><input type="radio" onclick="disable2()" class="radio_color" id="colores" name="colores" checked="true" />
 
@@ -368,7 +364,7 @@ function validar(texto){
 			<!-- <input type="color" name="favcolor" value="#ff0000"> -->
 			Selecciona el color:
 
-			<select name="ecolor" id="ecolor">
+			<select value="anu_color" name="ecolor" id="ecolor">
 					<option value="P0" selected>Color sólido</option>
 						<option value="Negro">Negro</option>
 						<option value="Azul">Azul</option>
@@ -384,28 +380,24 @@ function validar(texto){
 			<img src="../IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /></p><br/>
 			<p><input type="radio" name="colores" onclick="disable22()"/>
 			Multicolor:	 <input type="text" id="multicolor" maxlength="25" name="multicolor" disabled /></p><br/>
-			Antigüedad:<br/><br/>
-			<select name="nivel">
+			<p>Antigüedad:</p><br/>
+			<select value="anu_antiguitat" name="nivel">
 				<option value="0" selected>Elegir opción</option>
-				<option value="nueva"> - de 1 año</option>
-				<option value="usada">Entre 1 año hasta 3 años </option>
-				<option value="vieja"> + de 3 años</option>
+				<option value="adm"> - de 1 año</option>
+				<option value="edi">Entre 1 año hasta 3 años </option>
+				<option value="usu"> + de 3 años</option>
 			</select><br/><br/>
-			Nº serie:<br/><br/>
-			<input type="text" name="numero" id="numero" size="20" maxlength="6" /><br/><br
-			Foto:<br/><br/>
-			<form enctype="multipart/form-data" action="uploader2.php" method="POST">
-			<input name="uploadedfile" type="file" value"anu_foto" /><br/><br/>
-			Compensación:<br/><br/>
-			<input type="number"  value"anu_compensacio" name="compensacion">€
-			<br/><br/><br/>
-			<input type="submit" value="Buscar"/><br/><br/>
-			</form>
+			<p>Nº serie:</p><br/>
+			<input type="text" value="anu_numero_serie" name="numero" id="numero" size="6" maxlength="6" /><br/><br/>
+			<input type="submit" value="Dar de alta"/>
 		</form>
+
+
+
 
 		<br/>
 		<br/>
-		<p style="color: black; text-align:center;padding-top: 10px;font-size: 13px;font-weight: 200;"> Buscas una bici? Haz click <a style="color:blue;" href="page_form_search.php">Aquí</a></p>
+		<p style="color: black; text-align:center;padding-top: 10px;font-size: 13px;font-weight: 200;"> Has encontrado una bici? Crea tu anuncio <a style="color:blue;" href="page_form_create.php">Aquí</a></p>
 		<!--FINISH FORM -->
     <div class="clear"><!-- CLEAR --></div>
 
@@ -573,7 +565,7 @@ function validar(texto){
 
 				<p>
 					<a href="https://www.confianzaonline.es/empresas/tomasdomingo.htm" target="_blank">
-						<img src=" https://www.confianzaonline.es/sello70_30.gif" border="0" alt="Entidad adherida a Confianza Online"/>
+						<img src="https://www.confianzaonline.es/sello70_30.gif" border="0" alt="Entidad adherida a Confianza Online"/>
 					</a>
 				</p>
 			</li>

@@ -1,5 +1,6 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="./"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -8,7 +9,7 @@
 <meta name="description" content="Tomas Domingo es la mayor tienda de bicicletas especializada de Barcelona, cuenta con casi 2.000 m2 entre las dos tiendas y más de 65 años de historia. Dispone de bicis de Mountain Bike, bicis de carretera, bicis urbanas, bicis plegables e infantiles y ofrece en un mismo espacio, la selección de las mejores marcas de bicicletas del mundo como SPECIALIZED, TREK, SCOTT, GIANT, CANNONDALE y BROMPTON entre otras, así como un trato y atención totalmente personalizada. Dispone de taller altamente cualificado y certificado y servicio de garantías. " lang="" />
 <meta name="keywords" content="Bicis, bicicletas, BTT, ciclismo,  Mountain Bikes, carretera, triatlón, SPECIALIZED, TREK, SCOTT, GIANT, CANNONDALE, BROMPTON, taller, bicis 27,5, bicis 29, bicis suspension, bicis rigidas, bicis plegables. " lang="" />
 <meta name="title" content="Tomás Domingo | Tomás Domingo" />
-<link rel="Shortcut Icon" href="http://www.tomasdomingo.com/images/favicon.ico">
+<link rel="Shortcut Icon" href="images/favicon.ico">
 <link href="http://www.tomasdomingo.com/css/style.css" rel="stylesheet" type="text/css" />
 <link href="http://www.tomasdomingo.com/css/south-street/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 <link href="http://www.tomasdomingo.com/css/barnacode.css" rel="stylesheet" type="text/css" />
@@ -21,49 +22,6 @@
 <script type="text/javascript" src="http://www.tomasdomingo.com/http://www.tomasdomingo.com/js/utils.js"></script>
 <script type="text/javascript" src="http://www.tomasdomingo.com/http://www.tomasdomingo.com/js/barnacode.js"></script>
 <script type="text/javascript" src="http://www.tomasdomingo.com/http://www.tomasdomingo.com/js/jquery.barousel.min.js"></script>
-<script src="jquery-1.12.4.min.js"></script>
-<script>
-
-function disable1() {
-		document.f1.otros.value="";
-		document.f1.otros.disabled=true;
-		document.f1.ubicacion.disabled = false;
-}
-function disable11() {
-	document.f1.otros.disabled=false;
-	document.f1.ubicacion.disabled = true;
-	document.f1.ubicacion.value="P0";
-}
-function disable2() {
-		document.f1.multicolor.value="";
-		document.f1.multicolor.disabled=true;
-		document.f1.ecolor.disabled = false;
-}
-function disable22() {
-	document.f1.multicolor.disabled= false;
-	document.f1.ecolor.disabled = true;
-	document.f1.ecolor.value="P0";
-}
-function validar(this.value){
-	var x = this.value;
-	if (x.length <2){ //si el texo es menor a 2
-		alert('El texto es muy corto , porfavor introduce mas de dos letras');
-	}
-	x.value = x.value.toLowerCase();
-	if(document.f1.this.value =="" ){
-		return false;
-	}
-	else {
-		var x = this.value;
-		if (x.length <2){ //si el texo es menor a 2
-			alert('El texto es muy corto , porfavor introduce mas de dos letras');
-		}
-		x.value = x.value.toLowerCase();
-	}
-
-
-}
-</script>
 </head>
 <body>
 <!-- INICIO DEL MENU DESPLEGABLE !-->
@@ -83,7 +41,7 @@ function validar(this.value){
 	<div id="contanier_carrito">
         <div id="finestra_carrito">
             <div id="requadre">
-            	<p>Su cesta</p>
+            	<h2>Su cesta</h2>
               <p class="cart_empty_box">No hay productos en su cesta</p>
             </div>
             <div class="clear"><!-- CLEAR --></div>
@@ -238,184 +196,16 @@ function validar(this.value){
 
 	    <div class="clear"><!-- CLEAR --></div>
     <!--Start FORM -->
-		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;" >Has encontrado una bici?<br/>Crea tu anuncio <a style="color:blue;" href="page_form_create.php">Aquí</a></p>
-
-		<form name="f1" action="PHP/page_form_search.php" method="GET" onsubmit="return validar();">
-			<p>Fecha del post:</p><br/>
-			<p><script type="text/javascript">
-			//<![CDATA[
-			function makeArray() {
-			for (i = 0; i<makeArray.arguments.length; i++)
-			this[i + 1] = makeArray.arguments[i];}
-			var months = new makeArray('Enero','Febrero','Marzo','Abril','Mayo',
-			'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
-			var date = new Date();
-			var day = date.getDate();
-			var month = date.getMonth() + 1;
-			var yy = date.getYear();
-			var year = (yy < 1000) ? yy + 1900 : yy;
-			document.write("Hoy es " + day + " de " + months[month] + " del " + year);
-			//]]>
-		</script></p><br/><br>
+		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;"> Buscas una bici?<br/>Haz click <a style="color:blue;" href="page_form_search.php">Aquí</a></p>
 
 
-
-			<p>Título:<p/><br/>
-			<input type="text" name="titulo" size="100%" maxlength="50" onblur="validar()"/><br/><br/>
-			<p>Mensaje:</p><br/>
-			<textarea type="text" value="anu_descripcio_robatori" name="mensaje" rows="4" cols="100%" maxlength="200"></textarea><br/><br/>
-			<p>Fecha de robo:</p><br/>
-			<div><input type="date" value="anu_data_robatori" name="fecha" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
-			<p>Ubicación:</p><br/>
-			<p  style="display:inline !important;"><input id="ubi1"class="selec_ubi"  onclick="disable1();" style="display:inline !important;" type="radio" checked="true" name="ubicaciones" />
-			Selecciona tu barrio de Barcelona:
-			<select value="anu_ubicacio_robatori" name="ubicacion" id="ubicacion"  required>
-
-					<option value="P0" selected>Elige una opción</option>
-						<optgroup label="Ciutat Vella">
-							<option value="el Raval" >el Raval</option>
-							<option value="el Gòtic" >el Gòtic</option>
-							<option value="la Barceloneta" >la Barceloneta</option>
-							<option value="Sant Pere, Santa Caterina y la Ribera" >Sant Pere, Santa Caterina y la Ribera</option>
-						</optgroup>
-						<optgroup label="Eixample">
-							<option value="el Fort Pienc">el Fort Pienc</option>
-							<option value="la Sagrada Familia">la Sagrada Familia</option>
-							<option value="la Dreta del Eixample">la Dreta de l'Eixample</option>
-							<option value="Antiga Esquerra del Eixample">Antiga Esquerra de l'Eixample</option>
-							<option value="Nova Esquerra de l'Eixample">Nova Esquerra de l'Eixample</option>
-							<option value="el Fort Pienc">Sant Antoni</option>
-						</optgroup>
-						<optgroup label="Sants-Montjuic">
-							<option value="el Poble Sec">el Poble Sec</option>
-							<option value="la Marina del Prat Vermell">la Marina del Prat Vermell</option>
-							<option value="la Marina de Port">la Marina de Port</option>
-							<option value="la Font de la Guatlla">la Font de la Guatlla</option>
-							<option value="Hostafrancs">Hostafrancs</option>
-							<option value="la Bordeta">la Bordeta</option>
-							<option value="Sants-Badal">Sants-Badal</option>
-							<option value="Sants">Sants</option>
-							<option value="Parc de Montjuic">Parc de Montjuïc</option>
-							<option value="Zona Franca-Port">Zona Franca-Port</option>
-						</optgroup>
-						<optgroup label="Les corts">
-							<option value="les Corts">les Corts</option>
-							<option value="la Maternitat i Sant Ramon">la Maternitat i Sant Ramon</option>
-							<option value="Pedralbes">Pedralbes</option>
-						</optgroup>
-						<optgroup label="Sarriá-San Gervasio">
-							<option value="Vallvidrera, Tibidabo i les Planes">Vallvidrera, Tibidabo i les Planes</option>
-							<option value="Sarria">Sarrià</option>
-							<option value="les Tres Torres">les Tres Torres</option>
-							<option value="Sant Gervasi-Bonanova">Sant Gervasi-Bonanova</option>
-							<option value="Sant Gervasi-Galvany">Sant Gervasi-Galvany</option>
-							<option value="el Putget i Farro">el Putget i Farró</option>
-						</optgroup>
-						<optgroup label="Gracia">
-							<option value="Vallcarca i els Penitents">Vallcarca i els Penitents</option>
-							<option value="el Coll">el Coll</option>
-							<option value="la Salut">la Salut</option>
-							<option value="Vila de Gracia">Vila de Gràcia</option>
-							<option value="el Camp de Grassot i Gracia Nova">el Camp d'en Grassot i Gràcia Nova</option>
-						</optgroup>
-						<optgroup label="Horta-Guinardó">
-							<option value="Baix Guinardo">Baix Guinardó</option>
-							<option value="Can Baro">Can Baró</option>
-							<option value="el Guinardó">el Guinardó</option>
-							<option value="la Font de Fargues">la Font d'en Fargues</option>
-							<option value="el Carmel">el Carmel</option>
-							<option value="la Teixonera">la Teixonera</option>
-							<option value="Sant Genis dels Agudells">Sant Genís dels Agudells</option>
-							<option value="Montbau">Montbau</option>
-							<option value="la Vall Hebron">la Vall d'Hebron</option>
-							<option value="la Clota">la Clota</option>
-							<option value="Horta">Horta</option>
-						</optgroup>
-						<optgroup label="Nou Barris">
-							<option value="Vilapicina-Torre Llobeta">Vilapicina-Torre Llobeta</option>
-							<option value="Porta">Porta</option>
-							<option value="el Turo de la Piera">el Turó de la Piera</option>
-							<option value="Can Peguera">Can Peguera</option>
-							<option value="la Guineueta">la Guineueta</option>
-							<option value="Canyelles">Canyelles</option>
-							<option value="Verdun">Verdun</option>
-							<option value="la Prosperitat">la Prosperitat</option>
-							<option value="la Trinitat Nova">la Trinitat Nova</option>
-							<option value="Torre Baró">Torre Baró</option>
-							<option value="Ciutat Meridiana">Ciutat Meridiana</option>
-							<option value="Vallbona">Vallbona</option>
-						</optgroup>
-						<optgroup label="San Andrés">
-							<option value="la Trinitat Vella">la Trinitat Vella</option>
-							<option value="Baro de Viver">Baró de Viver</option>
-							<option value="el Bon Pastor">el Bon Pastor</option>
-							<option value="Sant Andreu">Sant Andreu</option>
-							<option value="la Sagrera">la Sagrera</option>
-							<option value="el Congres i els Indians">el Congrés i els Indians</option>
-							<option value="Navas">Navas</option>
-						</optgroup>
-						<optgroup label="San Martín">
-							<option value="el Camp de Arpa del Clot">el Camp de l'Arpa del Clot</option>
-							<option value="el Clot">el Clot</option>
-							<option value="el Parc i la Llacuna del Poblenou">el Parc i la Llacuna del Poblenou</option>
-							<option value="la Vila Olimpica del Poblenou">la Vila Olímpica del Poblenou</option>
-							<option value="el Poblenou">el Poblenou</option>
-							<option value="Diagonal Mar i el Front Maritim del Poblenou">Diagonal Mar i el Front Marítim del Poblenou</option>
-							<option value="el Besos i el Maresme">el Besòs i el Maresme</option>
-							<option value="Provencals del Poblenou">Provençals del Poblenou</option>
-							<option value="Sant Marti de Provencals">Sant Martí de Provençals</option>
-							<option value="la Vemedia i la Pau">la Vemedia i la Pau</option>
-						</optgroup>
-				</select>
-				<img src="../IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /></p><br/>
-				<p  style="display: inline;"><input class="otra_ubi"  onclick="disable11()" type="radio" name="ubicaciones" />
-				Otras ubicaciones:<input style="margin-left:116px;width: 296px;" type="text" id=" otros" name="otros" disabled/></p><br/><br/>
-			<p>Marca:</p><br/>
-			<input type="text" value="anu_marca" name="marca" id="marca" size="20" maxlength="15" /><br/><br/>
-			<p>Modelo:</p><br/>
-			<input type="text" value="anu_model" name="modelo" id="modelo" size="20" maxlength="25" /><br/><br/>
-			<p>Color:</p><br/>
-			<p><input type="radio" onclick="disable2()" class="radio_color" id="colores" name="colores" checked="true" />
-
-			<!-- MIRAR ESTA SOLUCIÓN! -->
-
-			<!-- <input type="color" name="favcolor" value="#ff0000"> -->
-			Selecciona el color:
-
-			<select value="anu_color" name="ecolor" id="ecolor">
-					<option value="P0" selected>Color sólido</option>
-						<option value="Negro">Negro</option>
-						<option value="Azul">Azul</option>
-						<option value="Verde">Verde</option>
-						<option value="Amarillo">Amarillo</option>
-						<option value="Naranja">Naranja</option>
-						<option value="Rojo">Rojo</option>
-						<option value="Lila">Lila</option>
-						<option value="Rosa">Rosa</option>
-						<option value="Blanco">Blanco</option>
-						<option value="Marrón">Marrón</option>
-			</select>
-			<img src="../IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /></p><br/>
-			<p><input type="radio" name="colores" onclick="disable22()"/>
-			Multicolor:	 <input type="text" id="multicolor" maxlength="25" name="multicolor" disabled /></p><br/>
-			<p>Antigüedad:</p><br/>
-			<select value="anu_antiguitat" name="nivel">
-				<option value="0" selected>Elegir opción</option>
-				<option value="nueva"> - de 1 año</option>
-				<option value="usada">Entre 1 año hasta 3 años </option>
-				<option value="vieja"> + de 3 años</option>
-			</select><br/><br/>
-			<p>Nº serie:</p><br/>
-			<input type="text" value="anu_numero_serie" name="numero" id="numero" size="6" maxlength="6" /><br/><br/>
-			<input type="submit" value="Dar de alta"/>
-		</form>
 
 
 
 
 		<br/>
 		<br/>
-		<p style="color: black; text-align:center;padding-top: 10px;font-size: 13px;font-weight: 200;"> Has encontrado una bici? Crea tu anuncio <a style="color:blue;" href="page_form_create.php">Aquí</a></p>
+		<p style="color: black; text-align:center;padding-top: 10px;font-size: 13px;font-weight: 200;"> Buscas una bici? Haz click <a style="color:blue;" href="page_form_search.php">Aquí</a></p>
 		<!--FINISH FORM -->
     <div class="clear"><!-- CLEAR --></div>
 
@@ -583,7 +373,7 @@ function validar(this.value){
 
 				<p>
 					<a href="https://www.confianzaonline.es/empresas/tomasdomingo.htm" target="_blank">
-						<img src="https://www.confianzaonline.es/sello70_30.gif" border="0" alt="Entidad adherida a Confianza Online"/>
+						<img src=" https://www.confianzaonline.es/sello70_30.gif" border="0" alt="Entidad adherida a Confianza Online"/>
 					</a>
 				</p>
 			</li>

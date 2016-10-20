@@ -151,25 +151,24 @@
 		</select>
 		<img src="IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /><br/><br/>
 		<input type="radio" name="colores" />
-		Multicolor:
+		Multicolor:	
 		<input type="text" name="multicolor" /><br/><br/>
 		Antigüedad:<br/><br/>
 		<select name="nivel">
 			<option value="0" selected>Elegir opción</option>
-			<option value="nueva"> - de 1 año</option>
-			<option value="usada">Entre 1 año hasta 3 años </option>
-			<option value="vieja"> + de 3 años</option>
+			<option value="adm"> - de 1 año</option>
+			<option value="edi">Entre 1 año hasta 3 años </option>
+			<option value="usu"> + de 3 años</option>
 		</select><br/><br/>
 		Nº serie:<br/><br/>
-		<input type="text" name="numero" id="numero" size="20" maxlength="6" /><br/><br
+		<input type="text" name="numero" id="numero" size="20" maxlength="6" /><br/><br/>
+		<input type="submit" value="Dar de alta"/><br/><br/>
 		Foto:<br/><br/>
-		<form enctype="multipart/form-data" action="uploader2.php" method="POST">
-		<input name="uploadedfile" type="file" value"anu_foto" />
+		<form enctype="multipart/form-data" action="../uploader2.php" method="POST">
+		<input name="uploadedfile" type="file" />
 		<input type="submit" value="Subir archivo" /><br/><br/>
 		Compensación:<br/><br/>
-		<input type="number"  value"anu_foto" name="compensacion">€
-		<br/>
-		<input type="submit" value="anu_compensacio"/><br/><br/>
+		<input type="number" name="compensacion">€
 		</form>
 	</form>
 	</body>
