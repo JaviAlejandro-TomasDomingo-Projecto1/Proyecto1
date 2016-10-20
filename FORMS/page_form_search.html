@@ -44,16 +44,92 @@ function disable22() {
 	document.f1.ecolor.disabled = true;
 	document.f1.ecolor.value="P0";
 }
-function validar(this.value){
-	if(document.f1.this.value =="" ){
-		return false;
+</script>
+<script>
+function validar(){
+	if(document.f1.titulo.value =="" ){
+		return exit;
 	}
 	else {
-		var x = this.value;
+		var x = document.f1.titulo.value;
 		if (x.length <2){ //si el texo es menor a 2
-			alert('El texto es muy corto , porfavor introduce mas de dos letras');
+			alert('El texto es muy corto');
 		}
-		x.value = x.value.toLowerCase();
+		if (document.f1.titulo.value.match(/^[A-Za-z\_\-\.\s\xF1\xD1]+$/) )
+		{
+		//document.f1.titulo.value.write(x.toLowerCase());
+		console.log('correcto')
+		}
+		else	{
+				alert ('Texto no valido , Porfavor introduce solo Texto');
+				document.f1.titulo.focus();
+			}
+	}
+
+
+}
+function validaru(){
+	if(document.f1.otros.value =="" ){
+		return exit;
+	}
+	else {
+		var x = document.f1.otros.value;
+		if (x.length <2){ //si el texo es menor a 2
+			alert('El texto es muy corto');
+		}
+
+		if (document.f1.otros.value.match(/^[A-Za-z\_\-\.\s\xF1\xD1]+$/) )
+		{
+		//document.f1.titulo.value.write(x.toLowerCase());
+		console.log('correcto')
+		}
+		else	{
+				alert ('Texto no valido , Porfavor introduce solo Texto');
+				document.f1.otros.focus();
+			}
+	}
+}
+	function validarm(){
+		if(document.f1.marca.value =="" ){
+			return exit;
+		}
+		else {
+			var x = document.f1.marca.value;
+			if (x.length <2){ //si el texo es menor a 2
+				alert('El texto es muy corto');
+			}
+			if (document.f1.marca.value.match(/^[A-Za-z\_\-\.\s\xF1\xD1]+$/) )
+			{
+			//document.f1.titulo.value.write(x.toLowerCase());
+			console.log('correcto')
+			}
+			else	{
+					alert ('Texto no valido , Porfavor introduce solo Texto');
+					document.f1.marca.focus();
+				}
+		}
+
+
+	}
+
+function validarmul(){
+	if(document.f1.multicolor.value =="" ){
+		return exit;
+	}
+	else {
+		var x = document.f1.multicolor.value;
+		if (x.length <2){ //si el texo es menor a 2
+			alert('El texto es muy corto');
+		}
+		if (document.f1.multicolor.value.match(/^[A-Za-z\_\-\.\s\xF1\xD1]+$/) )
+		{
+		//document.f1.titulo.value.write(x.toLowerCase());
+		console.log('correcto')
+		}
+		else	{
+				alert ('Texto no valido , Porfavor introduce solo Texto');
+				document.f1.multicolor.focus();
+			}
 	}
 
 
@@ -89,13 +165,13 @@ function validar(this.value){
 </div>
 	<div id="header_nav_container">
 	    <div id="header_nav">
-	        <a href="./index.html"><img src="http://www.tomasdomingo.com/imagenesPrueba/logo-domingo.png"></a>
+	        <a href="../index.html"><img src="http://www.tomasdomingo.com/imagenesPrueba/logo-domingo.png"></a>
 	        <ul>
 	            	<li><a href="es/estaticas/faqs/" >FAQS</a></li>
 	            	<li><a href="es/estaticas/trabaja-con-nosotros/" >TRABAJA CON NOSOTROS</a></li>
 	            	<li><a href="es/estaticas/tiendascontacto/" >TIENDAS/CONTACTO</a></li>
 	            <li><a href="https://www.facebook.com/pages/Tomas-Domingo-The-Bike-House/270923404115" title="Ver en facebook" target="_blank"><img src="http://www.tomasdomingo.com/imagenesPrueba/facebook-icono-domingo.jpg"></a></li>
-						<br/><li class="boton" style="float: right;padding-top: 10px;font-size: 13px;font-weight: 800;"><a href="page_form_search.php"><span>BUSCAR MI BICI PERDIDA</span></a></li>
+						<br/><li class="boton" style="float: right;padding-top: 10px;font-size: 13px;font-weight: 800;"><a href="page_form_search.html"><span>BICICLETAS PERDIDAS</span></a></li>
 					</ul>
 	    </div>
 	</div>
@@ -233,9 +309,10 @@ function validar(this.value){
 
 	    <div class="clear"><!-- CLEAR --></div>
     <!--Start FORM -->
-		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;" >Has encontrado una bici?<br/>Crea tu anuncio <a style="color:blue;" href="page_form_create.php">Aquí</a></p>
+			<h2>FORMULARIO DE BUSQUEDA DE BICICLETAS PERDIDAS </h2>
+		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;" >Has encontrado una bici?<br/>Crea tu anuncio <a style="color:blue;" href="page_form_create.html">Aquí</a></p>
 
-		<form name="f1" action="PHP/page_form_search.php" method="POST" onsubmit="return validar();">
+		<form name="f1" action="PHP/page_form_search.php" method="POST" >
 			<p>Palabra Clave:<p/><br/>
 			<input type="text" name="titulo" size="15" maxlength="15" onblur="validar()"/><br/><br/>
 		 <!--<p>Mensaje:</p><br/>
@@ -364,9 +441,9 @@ function validar(this.value){
 				</select>
 				<img src="../IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /></p><br/>
 				<p  style="display: inline;"><input class="otra_ubi"  onclick="disable11()" type="radio" name="ubicaciones" />
-				Otras ubicaciones:<input style="margin-left:116px;width: 296px;" type="text" id=" otros" name="otros" disabled/></p><br/><br/>
+				Otras ubicaciones:<input style="margin-left:116px;width: 296px;" type="text" id=" otros" name="otros" onblur="validaru()" disabled/></p><br/><br/>
 			<p>Marca:</p><br/>
-			<input type="text" value="" name="marca" id="marca" size="20" maxlength="15" /><br/><br/>
+			<input type="text" value="" name="marca" id="marca" size="20" onblur="validarm()" maxlength="15" /><br/><br/>
 			<p>Modelo:</p><br/>
 			<input type="text" value="" name="modelo" id="modelo" size="20" maxlength="25" /><br/><br/>
 			<p>Color:</p><br/>
@@ -392,7 +469,7 @@ function validar(this.value){
 			</select>
 			<img src="../IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /></p><br/>
 			<p><input type="radio" name="colores" onclick="disable22()"/>
-			Multicolor:	 <input type="text" id="multicolor" maxlength="25" name="multicolor" disabled /></p><br/>
+			Multicolor:	 <input type="text" id="multicolor" maxlength="25" onblur="validarmul()" name="multicolor" disabled /></p><br/>
 			<p>Antigüedad:</p><br/>
 			<select name="nivel">
 				<option value="0" selected>Elegir opción</option>
@@ -401,7 +478,7 @@ function validar(this.value){
 				<option value="vieja"> + de 3 años</option>
 			</select><br/><br/>
 			<p>Nº serie:</p><br/>
-			<input type="number"  name="numero" id="numero" size="6" maxlength="6" /><br/><br/>
+			<input type="number"  name="numero" id="numero" size="6" m	ax="6" /><br/><br/>
 			<input type="submit" value="Buscar"/>
 		</form>
 
@@ -410,7 +487,7 @@ function validar(this.value){
 
 		<br/>
 		<br/>
-		<p style="color: black; text-align:center;padding-top: 10px;font-size: 13px;font-weight: 200;"> Has encontrado una bici? Crea tu anuncio <a style="color:blue;" href="page_form_create.php">Aquí</a></p>
+		<p style="color: black; text-align:center;padding-top: 10px;font-size: 13px;font-weight: 200;"> Has encontrado una bici? Crea tu anuncio <a style="color:blue;" href="page_form_create.html">Aquí</a></p>
 		<!--FINISH FORM -->
     <div class="clear"><!-- CLEAR --></div>
 
