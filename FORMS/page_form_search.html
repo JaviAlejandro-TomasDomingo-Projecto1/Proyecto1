@@ -45,11 +45,6 @@ function disable22() {
 	document.f1.ecolor.value="P0";
 }
 function validar(this.value){
-	var x = this.value;
-	if (x.length <2){ //si el texo es menor a 2
-		alert('El texto es muy corto , porfavor introduce mas de dos letras');
-	}
-	x.value = x.value.toLowerCase();
 	if(document.f1.this.value =="" ){
 		return false;
 	}
@@ -240,30 +235,30 @@ function validar(this.value){
     <!--Start FORM -->
 		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;" >Has encontrado una bici?<br/>Crea tu anuncio <a style="color:blue;" href="page_form_create.php">Aquí</a></p>
 
-		<form name="f1" action="PHP/page_form_search.php" method="GET" onsubmit="return validar();">
-			<p>Fecha del post:</p><br/>
-			<p><script type="text/javascript">
-			//<![CDATA[
-			function makeArray() {
-			for (i = 0; i<makeArray.arguments.length; i++)
-			this[i + 1] = makeArray.arguments[i];}
-			var months = new makeArray('Enero','Febrero','Marzo','Abril','Mayo',
-			'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
-			var date = new Date();
-			var day = date.getDate();
-			var month = date.getMonth() + 1;
-			var yy = date.getYear();
-			var year = (yy < 1000) ? yy + 1900 : yy;
-			document.write("Hoy es " + day + " de " + months[month] + " del " + year);
-			//]]>
-		</script></p><br/><br>
+		<form name="f1" action="PHP/page_form_search.php" method="POST" onsubmit="return validar();">
+			<p>Palabra Clave:<p/><br/>
+			<input type="text" name="titulo" size="15" maxlength="15" onblur="validar()"/><br/><br/>
+		 <!--<p>Mensaje:</p><br/>
+			<textarea type="text" value="anu_descripcio_robatori" name="mensaje" rows="4" cols="100%" maxlength="200"></textarea><br/><br/>-->
 
-
-
-			<p>Título:<p/><br/>
-			<input type="text" name="titulo" size="100%" maxlength="50" onblur="validar()"/><br/><br/>
-			<p>Mensaje:</p><br/>
-			<textarea type="text" value="anu_descripcio_robatori" name="mensaje" rows="4" cols="100%" maxlength="200"></textarea><br/><br/>
+						<script type="text/javascript">
+						//<![CDATA[
+						function makeArray() {
+						for (i = 0; i<makeArray.arguments.length; i++)
+						this[i + 1] = makeArray.arguments[i];}
+						var months = new makeArray('Enero','Febrero','Marzo','Abril','Mayo',
+						'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+						var date = new Date();
+						var day = date.getDate();
+						var month = date.getMonth() + 1;
+						var yy = date.getYear();
+						var year = (yy < 1000) ? yy + 1900 : yy;
+						document.f1.data_post.value =(day + "/" + month + "/" + year);
+						//]]>
+						</script>
+						Fecha del post:<br/><br/>
+						<input type="date" id="data_post" value="">
+						<br/><br>
 			<p>Fecha de robo:</p><br/>
 			<div><input type="date" value="anu_data_robatori" name="fecha" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
 			<p>Ubicación:</p><br/>
@@ -371,9 +366,9 @@ function validar(this.value){
 				<p  style="display: inline;"><input class="otra_ubi"  onclick="disable11()" type="radio" name="ubicaciones" />
 				Otras ubicaciones:<input style="margin-left:116px;width: 296px;" type="text" id=" otros" name="otros" disabled/></p><br/><br/>
 			<p>Marca:</p><br/>
-			<input type="text" value="anu_marca" name="marca" id="marca" size="20" maxlength="15" /><br/><br/>
+			<input type="text" value="" name="marca" id="marca" size="20" maxlength="15" /><br/><br/>
 			<p>Modelo:</p><br/>
-			<input type="text" value="anu_model" name="modelo" id="modelo" size="20" maxlength="25" /><br/><br/>
+			<input type="text" value="" name="modelo" id="modelo" size="20" maxlength="25" /><br/><br/>
 			<p>Color:</p><br/>
 			<p><input type="radio" onclick="disable2()" class="radio_color" id="colores" name="colores" checked="true" />
 
@@ -382,7 +377,7 @@ function validar(this.value){
 			<!-- <input type="color" name="favcolor" value="#ff0000"> -->
 			Selecciona el color:
 
-			<select value="anu_color" name="ecolor" id="ecolor">
+			<select name="ecolor" id="ecolor">
 					<option value="P0" selected>Color sólido</option>
 						<option value="Negro">Negro</option>
 						<option value="Azul">Azul</option>
@@ -399,15 +394,15 @@ function validar(this.value){
 			<p><input type="radio" name="colores" onclick="disable22()"/>
 			Multicolor:	 <input type="text" id="multicolor" maxlength="25" name="multicolor" disabled /></p><br/>
 			<p>Antigüedad:</p><br/>
-			<select value="anu_antiguitat" name="nivel">
+			<select name="nivel">
 				<option value="0" selected>Elegir opción</option>
 				<option value="nueva"> - de 1 año</option>
 				<option value="usada">Entre 1 año hasta 3 años </option>
 				<option value="vieja"> + de 3 años</option>
 			</select><br/><br/>
 			<p>Nº serie:</p><br/>
-			<input type="text" value="anu_numero_serie" name="numero" id="numero" size="6" maxlength="6" /><br/><br/>
-			<input type="submit" value="Dar de alta"/>
+			<input type="text"  name="numero" id="numero" size="6" maxlength="6" /><br/><br/>
+			<input type="submit" value="Buscar"/>
 		</form>
 
 

@@ -231,8 +231,14 @@ function validar(texto){
 	    <div class="clear"><!-- CLEAR --></div>
     <!--Start FORM -->
 		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;"> Buscas una bici?<br/>Haz click <a style="color:blue;" href="page_form_search.php">Aquí</a></p>
-		<form name="f1" action="PHP/page_form_create.php" method="GET" onsubmit="return validar();">
-			Fecha del post:<br/>
+		<form name="f1" action="PHP/page_form_create.php" method="POST" onsubmit="return validar();">
+
+			Título:<br/>
+			<input type="text" onBlur="validar(value)" name="titulo" maxlength="50" size="100%"/><br/><br/>
+			Mensaje:<br/>
+
+			<textarea type="text" name="mensaje" rows="4" cols="100%" maxlength="200"></textarea><br/><br/>
+			Fecha del post: &nbsp;
 			<script type="text/javascript">
 			//<![CDATA[
 			function makeArray() {
@@ -245,13 +251,10 @@ function validar(texto){
 			var month = date.getMonth() + 1;
 			var yy = date.getYear();
 			var year = (yy < 1000) ? yy + 1900 : yy;
-			document.write("Hoy es " + day + " de " + months[month] + " del " + year);
+		 	document.write("Hoy es " + day + " de " + months[month] + " del " + year);
+				global_fecha = (year + "-" + month + "-" + day);
 			//]]>
 			</script><br/><br>
-			Título:<br/>
-			<input type="text" onBlur="validar(value)" name="titulo" maxlength="50" size="100%"/><br/><br/>
-			Mensaje:<br/>
-			<textarea type="text" name="mensaje" rows="4" cols="100%" maxlength="200"></textarea><br/><br/>
 			Cuando la has encontrado:<br/>
 			<p  style="display:inline !important;"><input id="ubi1"class="selec_ubi"  onclick="disable1();" style="display:inline !important;" type="radio" checked="true" name="ubicaciones" />
 			Selecciona tu barrio de Barcelona:
@@ -399,7 +402,7 @@ function validar(texto){
 			Compensación:<br/><br/>
 			<input type="number"  value"anu_compensacio" name="compensacion">€
 			<br/><br/><br/>
-			<input type="submit" value="Buscar"/><br/><br/>
+			<input type="submit" value="Dar de Alta"/><br/><br/>
 			</form>
 		</form>
 
