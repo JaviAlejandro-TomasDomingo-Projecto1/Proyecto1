@@ -14,7 +14,7 @@
 
 		//igualaciones de variable
 		$anu_titol = $_POST['titulo'];
-		$ani_data_anunci = $_POST['']
+		$anu_data_anunci = $_POST['']
 
 
 		if (!$conexion) {
