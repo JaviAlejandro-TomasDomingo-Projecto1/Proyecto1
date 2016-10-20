@@ -7,10 +7,15 @@
 		<?php
 
 		//realizamos la conexión
-		$conexion = mysqli_connect('localhost', 'root', '', 'f1');
+		$conexion = mysqli_connect('localhost', 'root', '', 'bd_bicis');
 
 		//le decimos a la conexión que los datos los devuelva diréctamente en utf8, así no hay que usar htmlentities
 		$acentos = mysqli_query($conexion, "SET NAMES 'utf8'");
+
+		//igualaciones de variable
+		$anu_titol = $_POST['titulo'];
+		$ani_data_anunci = $_POST['']
+
 
 		if (!$conexion) {
 		    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
@@ -24,9 +29,7 @@
 		$sql = "SELECT * FROM producto ";
 
 		//si hay precio mínimo
-		if($titulo==$anu_titol){
-			$titulo=1;
-			alert("Necesitas un título");
+		if(
 		}
 
 		$sql .= " WHERE pro_precio>=$precio_minimo ";

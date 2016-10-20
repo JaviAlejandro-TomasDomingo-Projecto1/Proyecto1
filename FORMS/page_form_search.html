@@ -236,6 +236,7 @@ function validar(this.value){
 		<p style="color: black; float: right;padding-top: 10px;font-size: 13px;font-weight: 600;" >Has encontrado una bici?<br/>Crea tu anuncio <a style="color:blue;" href="page_form_create.php">Aquí</a></p>
 
 		<form name="f1" action="PHP/page_form_search.php" method="POST" onsubmit="return validar();">
+<<<<<<< HEAD
 			<p>Palabra Clave:<p/><br/>
 			<input type="text" name="titulo" size="15" maxlength="15" onblur="validar()"/><br/><br/>
 		 <!--<p>Mensaje:</p><br/>
@@ -260,11 +261,11 @@ function validar(this.value){
 						<input type="date" id="data_post" value="">
 						<br/><br>
 			<p>Fecha de robo:</p><br/>
-			<div><input type="date" value="anu_data_robatori" name="fecha" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
+			<div><input type="date" name="fecha" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
 			<p>Ubicación:</p><br/>
 			<p  style="display:inline !important;"><input id="ubi1"class="selec_ubi"  onclick="disable1();" style="display:inline !important;" type="radio" checked="true" name="ubicaciones" />
 			Selecciona tu barrio de Barcelona:
-			<select value="anu_ubicacio_robatori" name="ubicacion" id="ubicacion"  required>
+			<select  name="ubicacion" id="ubicacion"  required>
 
 					<option value="P0" selected>Elige una opción</option>
 						<optgroup label="Ciutat Vella">
