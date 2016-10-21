@@ -25,12 +25,12 @@
 <script>
 
 function disable1() {
-		document.f1.otros.value="";
-		document.f1.otros.disabled=true;
+		document.f1.otro.value="";
+		document.f1.otro.disabled=true;
 		document.f1.ubicacion.disabled = false;
 }
 function disable11() {
-	document.f1.otros.disabled=false;
+	document.f1.otro.disabled=false;
 	document.f1.ubicacion.disabled = true;
 	document.f1.ubicacion.value="P0";
 }
@@ -69,23 +69,23 @@ function validar(){
 
 }
 function validaru(){
-	if(document.f1.otros.value =="" ){
+	if(document.f1.otro.value =="" ){
 		return exit;
 	}
 	else {
-		var x = document.f1.otros.value;
+		var x = document.f1.otro.value;
 		if (x.length <2){ //si el texo es menor a 2
 			alert('El texto es muy corto');
 		}
 
-		if (document.f1.otros.value.match(/^[A-Za-z\_\-\.\s\xF1\xD1]+$/) )
+		if (document.f1.otro.value.match(/^[A-Za-z\_\-\.\s\xF1\xD1]+$/) )
 		{
 		//document.f1.titulo.value.write(x.toLowerCase());
 		console.log('correcto')
 		}
 		else	{
 				alert ('Texto no valido , Porfavor introduce solo Texto');
-				document.f1.otros.focus();
+				document.f1.otro.focus();
 			}
 	}
 }
@@ -334,12 +334,12 @@ function validarmul(){
 						//]]>
 						</script>
 						Fecha del post:<br/><br/>
-						<input type="date" id="data_post" />
+						<input type="date" id="data_post" name="data_post" />
 						<br/><br>
 			<p>Fecha de robo:</p><br/>
 			<div><input type="date" name="fecha" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
 			<p>Ubicación:</p><br/>
-			<p  style="display:inline !important;"><input id="ubi1"class="selec_ubi"  onclick="disable1();" style="display:inline !important;" type="radio" checked="true" name="ubicaciones" />
+			<p  style="display:inline !important;"><input id="ubi1" value="1" class="selec_ubi"  onclick="disable1();" style="display:inline !important;" type="radio" checked="true" name="ubicaciones" />
 			Selecciona tu barrio de Barcelona:
 			<select  name="ubicacion" id="ubicacion"  required>
 
@@ -441,13 +441,13 @@ function validarmul(){
 				</select>
 				<img src="../IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /></p><br/>
 				<p  style="display: inline;"><input class="otra_ubi"  onclick="disable11()" type="radio" name="ubicaciones" />
-				Otras ubicaciones:<input style="margin-left:116px;width: 296px;" type="text" id=" otros" name="otros" onblur="validaru()" disabled/></p><br/><br/>
+				Otras ubicaciones:<input style="margin-left:116px;width: 296px;" type="text" id="otro" name="otro" onblur="validaru()" disabled/></p><br/><br/>
 			<p>Marca:</p><br/>
 			<input type="text" name="marca" id="marca" size="20" onblur="validarm()" maxlength="15" /><br/><br/>
 			<p>Modelo:</p><br/>
 			<input type="text" name="modelo" id="modelo" size="20" maxlength="25" /><br/><br/>
 			<p>Color:</p><br/>
-			<p><input type="radio" onclick="disable2()" class="radio_color" id="colores" name="colores" checked="true" />
+			<p><input type="radio" value="2" onclick="disable2()" class="radio_color" id="colores" name="colores" checked="true" />
 
 			<!-- MIRAR ESTA SOLUCIÓN! -->
 
@@ -455,7 +455,7 @@ function validarmul(){
 			Selecciona el color:
 
 			<select name="ecolor" id="ecolor">
-					<option value="P0" selected>Color sólido</option>
+					<option value="P1" selected>Color sólido</option>
 						<option value="Negro">Negro</option>
 						<option value="Azul">Azul</option>
 						<option value="Verde">Verde</option>
@@ -467,9 +467,9 @@ function validarmul(){
 						<option value="Blanco">Blanco</option>
 						<option value="Marrón">Marrón</option>
 			</select>
-			<img src="../IMG/icono_pregunta.png" id="i_pregunta" class="help" style="width:15px;margin-top:-5px;" /></p><br/>
-			<p><input type="radio" name="colores" onclick="disable22()"/>
-			Multicolor:	 <input type="text" id="multicolor" maxlength="25" onblur="validarmul()" name="multicolor" disabled /></p><br/>
+			<br/>
+			<p><input type="radio" id="colores" name="colores" onclick="disable22()"/>
+			Multicolor:	 <input type="text" id="multi" maxlength="25" onblur="validarmul()" name="multi" disabled /></p><br/>
 			<p>Antigüedad:</p><br/>
 			<select name="antiguedad">
 				<option value="0" selected>Elegir opción</option>
