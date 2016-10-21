@@ -334,7 +334,7 @@ function validarmul(){
 						//]]>
 						</script>
 						Fecha del post:<br/><br/>
-						<input type="date" id="data_post" value="">
+						<input type="date" id="data_post" />
 						<br/><br>
 			<p>Fecha de robo:</p><br/>
 			<div><input type="date" name="fecha" step="1" min="2015-01-01" max="2020-12-31" value="<?php echo date('Y-m-d');?>" /></div><br/>
@@ -443,9 +443,9 @@ function validarmul(){
 				<p  style="display: inline;"><input class="otra_ubi"  onclick="disable11()" type="radio" name="ubicaciones" />
 				Otras ubicaciones:<input style="margin-left:116px;width: 296px;" type="text" id=" otros" name="otros" onblur="validaru()" disabled/></p><br/><br/>
 			<p>Marca:</p><br/>
-			<input type="text" value="" name="marca" id="marca" size="20" onblur="validarm()" maxlength="15" /><br/><br/>
+			<input type="text" name="marca" id="marca" size="20" onblur="validarm()" maxlength="15" /><br/><br/>
 			<p>Modelo:</p><br/>
-			<input type="text" value="" name="modelo" id="modelo" size="20" maxlength="25" /><br/><br/>
+			<input type="text" name="modelo" id="modelo" size="20" maxlength="25" /><br/><br/>
 			<p>Color:</p><br/>
 			<p><input type="radio" onclick="disable2()" class="radio_color" id="colores" name="colores" checked="true" />
 
@@ -471,7 +471,7 @@ function validarmul(){
 			<p><input type="radio" name="colores" onclick="disable22()"/>
 			Multicolor:	 <input type="text" id="multicolor" maxlength="25" onblur="validarmul()" name="multicolor" disabled /></p><br/>
 			<p>Antigüedad:</p><br/>
-			<select name="nivel">
+			<select name="antiguedad">
 				<option value="0" selected>Elegir opción</option>
 				<option value="nueva"> - de 1 año</option>
 				<option value="usada">Entre 1 año hasta 3 años </option>
