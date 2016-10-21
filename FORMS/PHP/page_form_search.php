@@ -321,7 +321,7 @@ function validarmul(){
 		$anu_titol = $_POST['titulo'];
 		$anu_data_anunci = $_POST['data_post'];
 		$anu_data_robatori = $_POST['fecha'];
-		if ($_POST['ubicacion'] !== "P0"){
+		if ($_POST['ubicacion'] != "P0"){
 			$anu_ubicacio_robatori = $_POST['ubicacion'];
 		}
 		else{
@@ -329,14 +329,14 @@ function validarmul(){
 		}
 		$anu_marca = $_POST['marca'];
 		$anu_model = $_POST['model'];
-		if ($_POST['ecolor'] !== "P0"){
+		if ($_POST['ecolor'] != "P0"){
 			$anu_color = $_POST['ecolor'];
 		}
 		else{
 			$anu_color = $_POST['multicolor'];
 		}
 		$anu_antiguitat = $_POST['antiguedad'];
-		$anu_numero_serie = $_POST['numero']
+		$anu_numero_serie = $_POST['numero'];
 
 		if (!$conexion) {
 				echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
@@ -345,21 +345,34 @@ function validarmul(){
 		}
 
 		extract($_REQUEST);
-
+		$sentencia = "WHERE";
 
 		$sql = "SELECT * FROM anunci ";
 		$anunci = mysqli_query($conexion, $sql);
-		if($anu_titol !== "" || $anu_data_anunci !== "" || $anu_data_robatori !== "" || $anu_ubicacio_robatori !== "" || $anu_marca !== "" || $anu_model !== "" || $anu_color !== "" || $anu_antiguitat !== "" ||  $anu_numero_serie !== "" ) {
+
+		if($anu_titol != "" || $anu_data_anunci != "" || $anu_data_robatori != "" || $anu_ubicacio_robatori != "" || $anu_marca != "" || $anu_model != "" || $anu_color != "" || $anu_antiguitat != "" ||  $anu_numero_serie != "" ) {
 			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
-
-
-		}
+			$anunci = mysqli_fetch_array($anunci);
+			$primera_vuelta = 0
+			$lista_campos_anunci =  array( "anu_titol" => $anu_titol  , "anu_data_anunci" => $anu_data_anunci , "anu_data_robatori" => $anu_data_robatori, "anu_ubicacio_robatori" =>  $anu_ubicacio_robatori ,"anu_marca" => $anu_marca , "anu_model" => $anu_model  , "anu_color" => $anu_color , "anu_antiguitat" => $anu_antiguitat, "anu_numero_serie" => $anu_numero_serie );
+			foreach ( $lista_campos_anunci as $campo => $valor) {
+					if ($campo != "" && $primera_vuelta = 0 ){
+							$sentencia .= " " .$campo=$anunci['$valor'];
+					}
+					elseif ($campo != "") {
+							$sentencia .= " " ."AND" ." " .$campo=$anunci['$valor'];
+					}
+					else{
+						 echo "<script>console.log( 'No se ha rellenado el campo " .$campo "' );</script>";
+					}
+					$primera_vuelta .= 1;
+			}
+			$sql = "SELECT * FROM anunci " ." " .$sentencia ;
 		else{
-
 			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
 			echo "<script language='javascript'>alert('NO SE HA ENCONTRADO NINGUNA BICI DE ESAS CARACTERISTICAS');</script>";
 			echo "<h1 style='text-align:center;'> Todas las Bicis Encontradas </h1> <br/>";
-			while($anunci = mysqli_fetch_array($productos)){
+			while($anunci = mysqli_fetch_array($anunci)){
 				echo "Título: " . $anunci['anu_titol'] . "<br/>";
 				echo "Fecha Anuncio: " . $anunci['anu_data_anunci'] . "<br/>";
 				echo "Fecha Robo: " . $anunci['anu_data_robatori'] . "<br/>";
@@ -372,36 +385,11 @@ function validarmul(){
 				echo "Compensación: " . $anunci['anu_compensacio'] . "<br/>";
 				echo "Imagen:<br/>";
 				$foto='../IMG/'.$anunci['anu_foto'];
-		}
-		
-		$sql .= " WHERE pro_precio>=$precio_minimo ";
-
-		if($precio_maximo!=""){
-			$sql = $sql . " AND pro_precio<=$precio_maximo ";
-		}
-
-		$sql .= " ORDER BY $orden";
-
-		echo "---$sql---<br/><br/>";
-
-		$productos = mysqli_query($conexion, $sql);
-
-		if(mysqli_num_rows($productos)>0){
-			echo "Número de productos: " . mysqli_num_rows($productos) . "<br/><br/>";
-			while($producto = mysqli_fetch_array($productos)){
-				echo "Id: " . $producto['pro_id'] . "<br/>";
-				echo "Nombre: " . $producto['pro_nombre'] . "<br/>";
-				echo "Precio: " . $producto['pro_precio'] . "<br/>";
-				$foto='img/'.$producto['pro_foto'];
-
 				if (file_exists ($foto)){
 					echo "<img src='" . $foto . "' width='300'/><br/><br/>";
 				} else {
-					echo "<img src='img/0.jpg' width='300'/><br/><br/>";
+					echo "<img src='../IMG/0.jpg'  width='300'/><br/><br/>";
 				}
-			}
-		} else {
-			echo "No hay datos que mostrar!";
 		}
 
 		mysqli_close($conexion);
