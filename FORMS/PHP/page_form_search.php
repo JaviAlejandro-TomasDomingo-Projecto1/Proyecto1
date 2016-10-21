@@ -354,7 +354,7 @@ function validarmul(){
 			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
 			$anunci = mysqli_fetch_array($anunci);
 			$primera_vuelta = 0
-			$lista_campos_anunci =  array( "anu_titol" => $anu_titol  , "anu_data_anunci" => $anu_data_anunci , "anu_data_robatori" => $anu_data_robatori, "anu_ubicacio_robatori" =>  $anu_ubicacio_robatori ,"anu_marca" => $anu_marca , "anu_model" => $anu_model  , "anu_color" => $anu_color , "anu_antiguitat" => $anu_antiguitat, "anu_numero_serie" => $anu_numero_serie );
+			$lista_campos_anunci =  array( 'anu_titol' => $anu_titol  , 'anu_data_anunci' => $anu_data_anunci , 'anu_data_robatori' => $anu_data_robatori, 'anu_ubicacio_robatori' =>  $anu_ubicacio_robatori ,'anu_marca' => $anu_marca , 'anu_model' => $anu_model  , 'anu_color' => $anu_color , 'anu_antiguitat' => $anu_antiguitat, 'anu_numero_serie' => $anu_numero_serie );
 			foreach ( $lista_campos_anunci as $campo => $valor) {
 					if ($campo != "" && $primera_vuelta = 0 ){
 							$sentencia .= " " .$campo=$anunci['$valor'];
@@ -365,7 +365,7 @@ function validarmul(){
 					else{
 						 echo "<script>console.log( 'No se ha rellenado el campo " .$campo "' );</script>";
 					}
-					$primera_vuelta .= 1;
+					$primera_vuelta .= +1;
 			}
 			$sql = "SELECT * FROM anunci " ." " .$sentencia ;
 		else{
