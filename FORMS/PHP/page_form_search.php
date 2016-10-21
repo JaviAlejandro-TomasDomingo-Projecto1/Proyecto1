@@ -347,32 +347,27 @@ function validarmul(){
 		extract($_REQUEST);
 		$sentencia = "WHERE";
 
-		$sql = "SELECT * FROM anunci ";
-		$anunci = mysqli_query($conexion, $sql);
-
 		if($anu_titol != "" || $anu_data_anunci != "" || $anu_data_robatori != "" || $anu_ubicacio_robatori != "" || $anu_marca != "" || $anu_model != "" || $anu_color != "" || $anu_antiguitat != "" ||  $anu_numero_serie != "" ) {
 			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
 			$anunci = mysqli_fetch_array($anunci);
 			$primera_vuelta = 0
-			$lista_campos_anunci =  array( 'anu_titol' => $anu_titol  , 'anu_data_anunci' => $anu_data_anunci , 'anu_data_robatori' => $anu_data_robatori, 'anu_ubicacio_robatori' =>  $anu_ubicacio_robatori ,'anu_marca' => $anu_marca , 'anu_model' => $anu_model  , 'anu_color' => $anu_color , 'anu_antiguitat' => $anu_antiguitat, 'anu_numero_serie' => $anu_numero_serie );
+			$lista_campos_anunci =  array( "anu_titol" => $anu_titol, "anu_data_anunci" => $anu_data_anunci, "anu_data_robatori" => $anu_data_robatori, "anu_ubicacio_robatori" => $anu_ubicacio_robatori,"anu_marca" => $anu_marca , "anu_model" => $anu_model, "anu_color" => $anu_color, "anu_antiguitat" => $anu_antiguitat, "anu_numero_serie" => $anu_numero_serie );
 			foreach ( $lista_campos_anunci as $campo => $valor) {
 					if ($campo != "" && $primera_vuelta = 0 ){
-							$sentencia .= " " .$campo=$anunci['$valor'];
+							$sentencia .= " " .$campo .'LIKE' . $valor;
 					}
 					elseif ($campo != "") {
-							$sentencia .= " " ."AND" ." " .$campo=$anunci['$valor'];
+							$sentencia .= " " ."AND" ." " .$campo .'LIKE' . $valor;
 					}
 					else{
 						 echo "<script>console.log( 'No se ha rellenado el campo " .$campo "' );</script>";
 					}
 					$primera_vuelta .= +1;
 			}
-			$sql = "SELECT * FROM anunci " ." " .$sentencia ;
-		else{
-			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
-			echo "<script language='javascript'>alert('NO SE HA ENCONTRADO NINGUNA BICI DE ESAS CARACTERISTICAS');</script>";
-			echo "<h1 style='text-align:center;'> Todas las Bicis Encontradas </h1> <br/>";
-			while($anunci = mysqli_fetch_array($anunci)){
+			$sql = "SELECT * FROM anunci " . $sentencia ;
+			$anuncis = mysqli_query($conexion, $sql);
+			if(mysqli_num_rows($anuncis)>0){
+			while($anunci = mysqli_fetch_array($anuncis)){
 				echo "Título: " . $anunci['anu_titol'] . "<br/>";
 				echo "Fecha Anuncio: " . $anunci['anu_data_anunci'] . "<br/>";
 				echo "Fecha Robo: " . $anunci['anu_data_robatori'] . "<br/>";
@@ -390,6 +385,40 @@ function validarmul(){
 				} else {
 					echo "<img src='../IMG/0.jpg'  width='300'/><br/><br/>";
 				}
+			}
+			else {
+			echo "No hay datos que mostrar!";
+			}
+		}
+		else{
+			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
+			echo "<script language='javascript'>alert('NO SE HA RELLENADO NINGUNA CAMPO DEL FORMULARIO.');</script>";
+			echo "<h1 style='text-align:center;'> Todas las Bicis Encontradas </h1> <br/>";
+			$sql = "SELECT * FROM anunci ";
+			$anuncis = mysqli_query($conexion, $sql);
+			if(mysqli_num_rows($anuncis)>0){
+			while($anunci = mysqli_fetch_array($anuncis)){
+				echo "Título: " . $anunci['anu_titol'] . "<br/>";
+				echo "Fecha Anuncio: " . $anunci['anu_data_anunci'] . "<br/>";
+				echo "Fecha Robo: " . $anunci['anu_data_robatori'] . "<br/>";
+				echo "Ubicacion Robo:" . $anunci['anu_ubicacio_robatori'] . "<br/>";
+				echo "Marca: " . $anunci['anu_marca'] . "<br/>";
+				echo "Modelo: " . $anunci['anu_model'] . "<br/>";
+				echo "Color: " . $anunci['anu_color'] . "<br/>";
+				echo "Antiguedad:" . $anunci['anu_antiguitat'] . "<br/>";
+				echo "Numero de serie: " . $anunci['anu_numero_serie'] . "<br/>";
+				echo "Compensación: " . $anunci['anu_compensacio'] . "<br/>";
+				echo "Imagen:<br/>";
+				$foto='../IMG/'.$anunci['anu_foto'];
+				if (file_exists ($foto)){
+					echo "<img src='" . $foto . "' width='300'/><br/><br/>";
+				} else {
+					echo "<img src='../IMG/0.jpg'  width='300'/><br/><br/>";
+				}
+			}
+			else {
+				echo "No hay datos que mostrar!";
+			}
 		}
 
 		mysqli_close($conexion);
