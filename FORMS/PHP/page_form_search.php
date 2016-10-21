@@ -352,7 +352,7 @@ function validarmul(){
 			$primera_vuelta = 0
 			//titol
 			if ($anu_titol != "" && $primera_vuelta = 0 ){
-					$sentencia .= " " ."anu_titol" .' LIKE ' . $anu_titol;
+					$sentencia .= " " ."anu_titol" ." LIKE " . $anu_titol;
 					$primera_vuelta .= +1;
 			}
 			elseif ($campo != "") {
