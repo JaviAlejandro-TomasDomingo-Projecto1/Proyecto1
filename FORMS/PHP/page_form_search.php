@@ -322,36 +322,58 @@ function validarmul(){
 		$anu_data_anunci = $_POST['data_post'];
 		$anu_data_robatori = $_POST['fecha'];
 		if ($_POST['ubicacion'] !== "P0"){
-		$anu_ubicacio_robatori = $_POST['ubicacion'];
+			$anu_ubicacio_robatori = $_POST['ubicacion'];
 		}
 		else{
-		$anu_ubicacio_robatori = $_POST['otros'];
+			$anu_ubicacio_robatori = $_POST['otros'];
 		}
 		$anu_marca = $_POST['marca'];
 		$anu_model = $_POST['model'];
 		if ($_POST['ecolor'] !== "P0"){
-		$anu_color = $_POST['ecolor'];
+			$anu_color = $_POST['ecolor'];
 		}
 		else{
-		$anu_color = $_POST['multicolor'];
+			$anu_color = $_POST['multicolor'];
 		}
-		$anu_antiguitat = $_POST['nivel']
+		$anu_antiguitat = $_POST['antiguedad'];
+		$anu_numero_serie = $_POST['numero']
 
 		if (!$conexion) {
 				echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
 				echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-				echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
 				exit;
 		}
 
 		extract($_REQUEST);
 
-		$sql = "SELECT * FROM producto ";
 
-		//si hay precio mínimo
-		if(
+		$sql = "SELECT * FROM anunci ";
+		$anunci = mysqli_query($conexion, $sql);
+		if($anu_titol !== "" || $anu_data_anunci !== "" || $anu_data_robatori !== "" || $anu_ubicacio_robatori !== "" || $anu_marca !== "" || $anu_model !== "" || $anu_color !== "" || $anu_antiguitat !== "" ||  $anu_numero_serie !== "" ) {
+			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
+
+
 		}
+		else{
 
+			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
+			echo "<script language='javascript'>alert('NO SE HA ENCONTRADO NINGUNA BICI DE ESAS CARACTERISTICAS');</script>";
+			echo "<h1 style='text-align:center;'> Todas las Bicis Encontradas </h1> <br/>";
+			while($anunci = mysqli_fetch_array($productos)){
+				echo "Título: " . $anunci['anu_titol'] . "<br/>";
+				echo "Fecha Anuncio: " . $anunci['anu_data_anunci'] . "<br/>";
+				echo "Fecha Robo: " . $anunci['anu_data_robatori'] . "<br/>";
+				echo "Ubicacion Robo:" . $anunci['anu_ubicacio_robatori'] . "<br/>";
+				echo "Marca: " . $anunci['anu_marca'] . "<br/>";
+				echo "Modelo: " . $anunci['anu_model'] . "<br/>";
+				echo "Color: " . $anunci['anu_color'] . "<br/>";
+				echo "Antiguedad:" . $anunci['anu_antiguitat'] . "<br/>";
+				echo "Numero de serie: " . $anunci['anu_numero_serie'] . "<br/>";
+				echo "Compensación: " . $anunci['anu_compensacio'] . "<br/>";
+				echo "Imagen:<br/>";
+				$foto='../IMG/'.$anunci['anu_foto'];
+		}
+		
 		$sql .= " WHERE pro_precio>=$precio_minimo ";
 
 		if($precio_maximo!=""){
