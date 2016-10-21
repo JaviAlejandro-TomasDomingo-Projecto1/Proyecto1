@@ -349,20 +349,114 @@ function validarmul(){
 
 		if($anu_titol != "" || $anu_data_anunci != "" || $anu_data_robatori != "" || $anu_ubicacio_robatori != "" || $anu_marca != "" || $anu_model != "" || $anu_color != "" || $anu_antiguitat != "" ||  $anu_numero_serie != "" ) {
 			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
-			$anunci = mysqli_fetch_array($anunci);
 			$primera_vuelta = 0
-			$lista_campos_anunci =  array( "anu_titol" => $anu_titol, "anu_data_anunci" => $anu_data_anunci, "anu_data_robatori" => $anu_data_robatori, "anu_ubicacio_robatori" => $anu_ubicacio_robatori,"anu_marca" => $anu_marca , "anu_model" => $anu_model, "anu_color" => $anu_color, "anu_antiguitat" => $anu_antiguitat, "anu_numero_serie" => $anu_numero_serie );
-			foreach ( $lista_campos_anunci as $campo => $valor) {
-					if ($campo != "" && $primera_vuelta = 0 ){
-							$sentencia .= " " .$campo .'LIKE' . $valor;
-					}
-					elseif ($campo != "") {
-							$sentencia .= " " ."AND" ." " .$campo .'LIKE' . $valor;
-					}
-					else{
-						 echo "<script>console.log( 'No se ha rellenado el campo " .$campo "' );</script>";
-					}
+			//titol
+			if ($anu_titol != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_titol" .' LIKE ' . $anu_titol;
 					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_titol" .' LIKE ' . $anu_titol;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_titol"' );</script>";
+			}
+			//data anunci
+			if ($anu_data_anunci != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_data_anunci" .' LIKE ' . $anu_data_anunci;
+					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_data_anunci" .' LIKE ' . $anu_data_anunci;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_data_anunci"' );</script>";
+			}
+			//data robatori
+			if ($anu_data_robatori != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_data_robatori" .' LIKE ' . $anu_data_robatori;
+					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_data_robatori" .' LIKE ' . $anu_data_robatori;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_data_robatori"' );</script>";
+			}
+			//Ubicacion
+			if ($anu_ubicacio_robatori != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_ubicacio_robatori" .' LIKE ' . $anu_ubicacio_robatori;
+					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_ubicacio_robatori" .' LIKE ' . $anu_ubicacio_robatori;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_ubicacio_robatori"' );</script>";
+			}
+			//Marca
+			if ($anu_marca != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_marca" .' LIKE ' . $anu_marca;
+					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_marca" .' LIKE ' . $anu_marca;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_marca"' );</script>";
+			}
+			//Modelo
+			if ($anu_model != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_model" .' LIKE ' . $anu_model;
+					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_model" .' LIKE ' . $anu_model;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_model"' );</script>";
+			}
+			//Color
+			if ($anu_color != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_color" .' LIKE ' . $anu_color;
+					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_color" .' LIKE ' . $anu_color;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_color"' );</script>";
+			}
+			//antiguetat
+			if ($anu_antiguitat != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_antiguitat" .' LIKE ' . $anu_antiguitat;
+					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_antiguitat" .' LIKE ' . $anu_antiguitat;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_antiguitat"' );</script>";
+			}
+			//numero de serie
+			if ($anu_numero_serie != "" && $primera_vuelta = 0 ){
+					$sentencia .= " " ."anu_numero_serie" .' LIKE ' . $anu_numero_serie;
+					$primera_vuelta .= +1;
+			}
+			elseif ($campo != "") {
+					$sentencia .= " " ."AND" ." " ."anu_numero_serie" .' LIKE ' . $anu_numero_serie;
+					$primera_vuelta .= +1;
+			}
+			else{
+				 echo "<script>console.log( 'No se ha rellenado el campo " .$anu_numero_serie"' );</script>";
 			}
 			$sql = "SELECT * FROM anunci " . $sentencia ;
 			$anuncis = mysqli_query($conexion, $sql);
