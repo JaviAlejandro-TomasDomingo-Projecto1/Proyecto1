@@ -352,8 +352,8 @@ function validarmul(){
 			//COMPROBAR QUE LOS DATOS DE LA BD NO ESTAN SIN
 			$primera_vuelta = 0;
 			//titol
-			if($anu_titol !== "" && $primera_vuelta == 0 ){
-					$sentencia .= " " ."anu_titol" .' LIKE ' . $anu_titol;
+
+>>>>>>> origin/master
 					$primera_vuelta .= +1;
 			}
 			elseif ($anu_titol !== "") {
